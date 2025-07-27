@@ -1,0 +1,28 @@
+*{
+	padding: 0px;
+	margin: 0px;
+	border: 0px;
+}
+
+:root{
+	/*Corpo cores*/
+	--corpo-cor-font: #000;
+	--corpo-corFundo: white;
+	/*---------------------------------------*/
+	/*Corpo header*/
+	--header-cor-font: #000;
+	--header-cor-links: #000;
+	--header-corFundo: white !important;
+	/*---------------------------------------*/
+	--cor-do-site: white;
+	--cor-sec-do-site: #fff;
+}
+body, html{
+	font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
+}
+html{
+	scroll-behavior: smooth;
+}
+body{
+	font-family: "Source Sans Pro", sans-serif;
+}
