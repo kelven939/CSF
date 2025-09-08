@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalhes da Bolsa</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <section class="secCard">
+    <div class="container">
+      <h1 id="tituloBolsa"></h1>
+      <p id="descricaoBolsa"></p>
+      <p><strong>Data de Publicação:</strong> <span id="dataBolsa"></span></p>
+      <a id="linkBolsa" href="#" target="_blank">Candidatar-se ➝</a>
+    </div>
+  </section>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
+    import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyDqw0C_jUX0XoZNMCfWGcgahTmXcQ2AmsI",
+      authDomain: "ifg-site-295ac.firebaseapp.com",
+      projectId: "ifg-site-295ac",
+      storageBucket: "ifg-site-295ac.firebasestorage.app",
+      messagingSenderId: "95299504870",
+      appId: "1:95299504870:web:d178a22b71a7c813518927",
+      measurementId: "G-8NQLWJ9BWQ"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    // Obter IDs da URL
+    const params = new URLSearchParams(window.location.search);
+    const categoriaId = params.get("categoria");
+    const bolsaId = params.get("bolsa");
+
+    async function carregarDetalhesBolsa() {
+      if (!categoriaId || !bolsaId) {
+        document.getElementById("tituloBolsa").textContent = "Bolsa não encontrada";
+        return;
+      }
+
+      const bolsaRef = doc(db, "bolsas", categoriaId, "detalhes", bolsaId);
+      const bolsaSnap = await getDoc(bolsaRef);
+
+      if (!bolsaSnap.exists()) {
+        document.getElementById("tituloBolsa").textContent = "Bolsa não encontrada";
+        return;
+      }
+
+      const bolsa = bolsaSnap.data();
+      document.getElementById("tituloBolsa").textContent = bolsa.titulo;
+      document.getElementById("descricaoBolsa").textContent = bolsa.descricao;
+      document.getElementById("dataBolsa").textContent = bolsa.dataPublicacao;
+      document.getElementById("linkBolsa").href = bolsa.linkCandidatura;
+    }
+
+    carregarDetalhesBolsa();
+  </script>
+</body>
+</html>
