@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="./doacoes.css">
+<title>Doações - IFG</title>
+</head>
+<body>
+
+<div class="donation-section">
+  <h2 class="gradient-text">Campanha de Solidariedade</h2>
+  <p>Estamos empenhados em ajudar <span class="gradient-tex">crianças vulneráveis ao redor do mundo</span>. Sua doação contribui para fornecer acesso a <strong>educação</strong>, <strong>alimentação saudável</strong>, <strong>assistência médica</strong> e <strong>proteção básica</strong>. Junte-se a nós e transforme vidas!</p>
+
+  <div class="tabs">
+    <button class="tab-btn active" data-tab="mpesaTab">M-pesa</button>
+    <button class="tab-btn" data-tab="emolaTab">E-mola</button>
+    <button class="tab-btn" data-tab="bankTab">Banco</button>
+  </div>
+
+  <div class="tab-content active" id="mpesaTab">
+    <div class="donation-card">
+      <h3>M-pesa</h3>
+      <div class="qr-container"><div class="qr-inner" id="mpesaInner"></div></div>
+      <div class="account-info">
+        <p><strong>Titular:</strong> Instituto de Formação Global IFG</p>
+        <p><strong>Número:</strong> 258841441993</p>
+        <p><strong>Operadora:</strong> Vodacom</p>
+      </div>
+      <button class="copy-btn" onclick="copyText('258841441993')">Copiar Número</button>
+    </div>
+  </div>
+
+  <div class="tab-content" id="emolaTab">
+    <div class="donation-card">
+      <h3>E-mola</h3>
+      <div class="qr-container"><div class="qr-inner" id="emolaInner"></div></div>
+      <div class="account-info">
+        <p><strong>Titular:</strong> Instituto de Formação Global</p>
+        <p><strong>Número:</strong> 258864214697</p>
+        <p><strong>Operadora:</strong> Movitel</p>
+      </div>
+      <button class="copy-btn" onclick="copyText('25886421469')">Copiar Número</button>
+    </div>
+  </div>
+
+  <div class="tab-content" id="bankTab">
+    <div class="donation-card">
+      <h3>Banco</h3>
+      <div class="qr-container"><div class="qr-inner" id="bankInner"></div></div>
+      <div class="account-info">
+        <p><strong>Banco:</strong> BIM</p>
+        <p><strong>Titular:</strong> Instituto de Formação Global IFG</p>
+        <p><strong>IBAN:</strong> MZ59000000000000000012345</p>
+        <p><strong>SWIFT/BIC:</strong> BDMZMZMX</p>
+        <p><strong>Conta:</strong> 000123456789</p>
+      </div>
+      <button class="copy-btn" onclick="copyText('000123456789')">Copiar Conta</button>
+    </div>
+  </div>
+</div>
+
+<div id="toast" class="toast"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/qrcodejs2@0.0.2/qrcode.min.js"></script>
+<script>
+  function copyText(text) {
+    navigator.clipboard.writeText(text).then(() => {
+      showToast("Número copiado com sucesso!", "success");
+    }).catch(() => {
+      showToast("Falha ao copiar o número!", "error");
+    });
+  }
+
+  function showToast(message, type) {
+    const toast = document.getElementById("toast");
+    toast.className = "toast show " + type;
+    toast.textContent = message;
+    setTimeout(() => { toast.className = toast.className.replace("show", ""); }, 3000);
+  }
+
+  function generateQR(innerId, text) {
+    const container = document.getElementById(innerId);
+    container.innerHTML = '';
+    new QRCode(container, {
+      text: text,
+      width: 140,
+      height: 140,
+      colorDark : "#004080",
+      colorLight : "#ffffff",
+      correctLevel : QRCode.CorrectLevel.H
+    });
+  }
+
+  generateQR('mpesaInner', '258840000000');
+  generateQR('emolaInner', '258850000000');
+  generateQR('bankInner', 'MZ59000000000000000012345');
+
+  // Tabs interativas
+  const tabButtons = document.querySelectorAll('.tab-btn');
+  const tabContents = document.querySelectorAll('.tab-content');
+
+  tabButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      tabButtons.forEach(b => b.classList.remove('active'));
+      tabContents.forEach(c => c.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById(btn.dataset.tab).classList.add('active');
+    });
+  });
+</script>
+</body>
+</html>

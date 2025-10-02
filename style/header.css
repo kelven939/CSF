@@ -24,7 +24,7 @@ nav{
 	justify-content: space-between;
 	align-items: center;
 	width: 100%;
-	background-color: #42a9fd !important;
+	 background: linear-gradient(90deg, #000000, #3533cd, #000000);
 	position: fixed;
 	border-bottom: 0px solid black;
 	z-index: 1;
