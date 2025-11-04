@@ -569,9 +569,28 @@ p {
 			color: #eee;
 			border: 0px solid red !important;
 		}
+		.quem-somos {
+		display: flex;
+  		justify-content: center;
+ 		align-items: center;
+  		flex-direction: column;
+  		border: 2px solid transparent;
+ 		width: 230px;
+  		height: 260px;
+  		padding: 15px;
+  		margin-left: 145px;
+		margin-top: -95px;
+  		border-radius: 25px;
+  		background: linear-gradient(white, white) padding-box,
+    	linear-gradient(90deg, #000000, #3533cd, #000000) border-box;
+	}
 		.quem-somos h1 {
-			font-size: 55px;
-			font-weight: 300;
+			font-size: 2.5em;
+  			font-weight: bold;
+  			text-align: center;
+  			background: linear-gradient(90deg, #000000, #3533cd, #000000);
+  			-webkit-background-clip: text;
+  			-webkit-text-fill-color: transparent;
 			text-align: center;
 		}
 		.bar-div {
@@ -902,14 +921,32 @@ footer p{
 	}
 	.quem-somos {
 		display: flex;
-		justify-content: center;
-		align-items: center;
-		flex-direction: row;
-		border: 0px solid green;
+  		justify-content: center;
+ 		align-items: center;
+  		flex-direction: column;
+  		border: 2px solid transparent;
+ 		width: 230px;
+  		height: 260px;
+  		padding: 15px;
+  		margin-right: 145px;
+  		border-radius: 25px;
+  		background: linear-gradient(white, white) padding-box,
+    	linear-gradient(90deg, #000000, #3533cd, #000000) border-box;
+	}
+	.fa-users {
+		 font-size: 4em;
+      background: linear-gradient(90deg, #000000, #3533cd, #000000);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 0 4px rgba(0,0,0,0.3));
 	}
 	.quem-somos h1 {
-		font-size: 55px;
-		font-weight: 300;
+		font-size: 2.5em;
+  		font-weight: bold;
+  		text-align: center;
+  		background: linear-gradient(90deg, #000000, #3533cd, #000000);
+  		-webkit-background-clip: text;
+  		-webkit-text-fill-color: transparent;
 	}
 	.bar-div {
 		width: 220px;
@@ -917,10 +954,11 @@ footer p{
 		background-color: #eee;
 		display: block;
 		border-radius: 5px;
-		transform: rotate(90deg);
-		margin-left: -105px;
+		transform: rotate(180deg);
+		margin-left: -220px;
 		margin-top: 30px;
 		border-radius: 25px;
+		display: none;
 	}
 	.info-quem-somos {
 		border: 0px solid red;
