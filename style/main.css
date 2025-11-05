@@ -1178,15 +1178,15 @@ footer p{
   color: #ff0000;
   position: absolute;
   right: 20px;
-  top: 10px;
-  font-size: 28px;
+  top: 15px;
+  font-size: 30px;
   font-weight: bold;
   cursor: pointer;
-  transition: transform 0.2s ease, color 0.2s ease;
+  transition: transform 0.25s ease, color 0.25s ease;
 }
 .close:hover {
   color: #b30000;
-  transform: scale(1.1);
+  transform: rotate(90deg) scale(1.2);
 }
 
 /* Título principal */
