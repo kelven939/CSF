@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <meta name="description" content="CSF" />
-  <meta name="theme-color" content="#42a9fd" />
+  <meta name="theme-color" content="#3533cd" />
   <!-- FontAwesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   <!-- Bootstrap CSS -->
@@ -147,69 +147,141 @@
 
   </section>
 
-  <section class="section-nossos-servicos" id="services">
+  <!-- SEÇÃO SERVIÇOS -->
+<section class="section-nossos-servicos" id="services">
+  <div class="container">
+    <h1 class="services-titles gradient-text">Conheça Nossos Serviços</h1>
+    <p class="service-paragraph">Oferecemos serviços especializados para quem deseja estudar e trabalhar no exterior.</p>
 
-    <div class="container">
-      <h1 class="services-titles gradient-text">Conheça Nossos Serviços</h1>
-      <p class="service-paragraph">Oferecemos serviços especializados para quem deseja estudar e trabalhar no exterior.</p>
-
-      <div class="services">
-         <div class="service-card cursos-ifg fade-up">
-          <i class="service-icon fas fa-laptop-code"></i>
+    <div class="services">
+      <div class="service-card cursos-ifg fade-up" id="openCursosModal">
+        <i class="service-icon fas fa-laptop-code"></i>
         <div class="service-title gradient-text">Cursos</div>
-        <p class="service-description">Cursos de formação profissional e tecnológica para impulsionar a carreira.</p>
-      </div>
-           <div class="service-card fade-up">
-      <i class="service-icon fas fa-user-tie"></i>
-      <div class="service-title gradient-text">Consultoria</div>
-      <p class="service-description">Análise e soluções estratégicas para o crescimento organizacional.</p>
-    </div>
-          <div class="service-card fade-up">
-              <i class="service-icon fas fa-user-graduate"></i>
-              <div class="service-title gradient-text">Mentoria</div>
-              <p class="service-description">Apoio e orientação para estudantes e profissionais.</p>
-          </div>
-          <div class="service-card fade-up">
-      <i class="service-icon fas fa-briefcase"></i>
-      <div class="service-title gradient-text">Mentoria para Empresas</div>
-      <p class="service-description">Programas de desenvolvimento e orientação para equipes corporativas.</p>
-      </div>
-          <div class="service-card fade-up">
-              <i class="service-icon fas fa-hands-helping"></i>
-              <div class="service-title gradient-text">Assistência</div>
-              <p class="service-description">Suporte em todo o processo de candidatura.</p>
-          </div>
-             <div class="service-card fade-up">
-      <i class="service-icon fas fa-headset"></i>
-      <div class="service-title gradient-text">Assessoria</div>
-      <p class="service-description">Acompanhamento personalizado em processos administrativos e acadêmicos.</p>
-    </div>
-          <div class="service-card fade-up">
-              <i class="service-icon fas fa-language"></i>
-              <div class="service-title gradient-text">Tradução Juramentada</div>
-              <p class="service-description">Tradução certificada de documentos acadêmicos e profissionais.</p>
-          </div>
-          <div class="service-card fade-up">
-              <i class="service-icon fas fa-chalkboard-teacher"></i>
-              <div class="service-title gradient-text">Suporte Educacional (Monitoria)</div>
-              <p class="service-description">Auxílio acadêmico para diversas disciplinas.</p>
-          </div>
-          <div class="service-card fade-up">
-              <i class="service-icon fas fa-book"></i>
-              <div class="service-title gradient-text">Preparação para Exames</div>
-              <p class="service-description">Treinamento para exames finais e de admissão.</p>
-          </div>
-          <div class="service-card fade-up">
-              <i class="service-icon fas fa-globe"></i>
-              <div class="service-title gradient-text">Divulgação de Oportunidades no Exterior</div>
-              <p class="service-description">Informações sobre bolsas de estudo e empregos fora do país.</p>
-          </div>
-
+        <p class="service-description">
+          Cursos de formação profissional e tecnológica para impulsionar a carreira.
+        </p>
       </div>
 
+      <div class="service-card fade-up">
+        <i class="service-icon fas fa-user-tie"></i>
+        <div class="service-title gradient-text">Consultoria</div>
+        <p class="service-description">Análise e soluções estratégicas para o crescimento organizacional.</p>
+      </div>
+
+      <div class="service-card fade-up">
+        <i class="service-icon fas fa-user-graduate"></i>
+        <div class="service-title gradient-text">Mentoria</div>
+        <p class="service-description">Apoio e orientação para estudantes e profissionais.</p>
+      </div>
+
+      <div class="service-card fade-up">
+        <i class="service-icon fas fa-briefcase"></i>
+        <div class="service-title gradient-text">Mentoria para Empresas</div>
+        <p class="service-description">Programas de desenvolvimento e orientação para equipes corporativas.</p>
+      </div>
+
+      <div class="service-card fade-up">
+        <i class="service-icon fas fa-hands-helping"></i>
+        <div class="service-title gradient-text">Assistência</div>
+        <p class="service-description">Suporte em todo o processo de candidatura.</p>
+      </div>
+
+      <div class="service-card fade-up">
+        <i class="service-icon fas fa-headset"></i>
+        <div class="service-title gradient-text">Assessoria</div>
+        <p class="service-description">Acompanhamento personalizado em processos administrativos e acadêmicos.</p>
+      </div>
+
+      <div class="service-card fade-up">
+        <i class="service-icon fas fa-language"></i>
+        <div class="service-title gradient-text">Tradução Juramentada</div>
+        <p class="service-description">Tradução certificada de documentos acadêmicos e profissionais.</p>
+      </div>
+
+      <div class="service-card fade-up">
+        <i class="service-icon fas fa-chalkboard-teacher"></i>
+        <div class="service-title gradient-text">Suporte Educacional (Monitoria)</div>
+        <p class="service-description">Auxílio acadêmico para diversas disciplinas.</p>
+      </div>
+
+      <div class="service-card fade-up">
+        <i class="service-icon fas fa-book"></i>
+        <div class="service-title gradient-text">Preparação para Exames</div>
+        <p class="service-description">Treinamento para exames finais e de admissão.</p>
+      </div>
+
+      <div class="service-card fade-up">
+        <i class="service-icon fas fa-globe"></i>
+        <div class="service-title gradient-text">Divulgação de Oportunidades no Exterior</div>
+        <p class="service-description">Informações sobre bolsas de estudo e empregos fora do país.</p>
+      </div>
+    </div>
   </div>
+</section>
 
-  </section>
+<!-- MODAL DE CURSOS -->
+<div id="cursosModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2 class="gradient-text">Nossos Cursos</h2>
+
+    <div class="cursos-lista">
+      <div class="curso-item">
+        <i class="fas fa-language"></i>
+        <h3>Curso de Inglês</h3>
+        <p>Aprenda a comunicar-se com confiança em contextos pessoais, acadêmicos e profissionais.</p>
+      </div>
+
+      <div class="curso-item">
+        <i class="fas fa-file-excel"></i>
+        <h3>Curso de Excel (Básico, Intermediário e Avançado)</h3>
+        <p>Domine planilhas, fórmulas, dashboards e automações no Excel para o mercado de trabalho.</p>
+      </div>
+
+      <div class="curso-item">
+        <i class="fas fa-desktop"></i>
+        <h3>Curso de Informática</h3>
+        <p>Conhecimentos essenciais em sistemas operacionais, Word, PowerPoint e Internet.</p>
+      </div>
+
+      <div class="curso-item">
+        <i class="fas fa-industry"></i>
+        <h3>Curso de Lean Manufacturing</h3>
+        <p>Aprenda técnicas de melhoria contínua e eliminação de desperdícios nos processos produtivos.</p>
+      </div>
+
+      <div class="curso-item">
+        <i class="fas fa-certificate"></i>
+        <h3>Curso White Belt Six Sigma</h3>
+        <p>Introdução aos princípios do Six Sigma e fundamentos da qualidade.</p>
+      </div>
+
+      <div class="curso-item">
+        <i class="fas fa-medal"></i>
+        <h3>Curso Yellow Belt Six Sigma</h3>
+        <p>Capacitação para atuar em pequenas melhorias e projetos de eficiência operacional.</p>
+      </div>
+
+      <div class="curso-item">
+        <i class="fas fa-award"></i>
+        <h3>Curso Green Belt Six Sigma</h3>
+        <p>Habilidades práticas para liderar projetos de melhoria e otimização de processos.</p>
+      </div>
+
+      <div class="curso-item">
+        <i class="fas fa-chess-queen"></i>
+        <h3>Curso Black Belt Six Sigma</h3>
+        <p>Formação avançada para especialistas em gestão da qualidade e liderança de equipes.</p>
+      </div>
+
+      <div class="curso-item">
+        <i class="fas fa-bullhorn"></i>
+        <h3>Curso de Marketing Digital</h3>
+        <p>Aprenda estratégias de SEO, redes sociais, anúncios e posicionamento digital.</p>
+      </div>
+    </div>
+  </div>
+</div>
 
   <div class="grid-container"></div>
 
@@ -550,6 +622,31 @@
         <i class="fas fa-arrow-up"></i>
         Voltar ao topo
     </button>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const modal = document.getElementById("cursosModal");
+  const btn = document.getElementById("openCursosModal");
+  const closeBtn = modal.querySelector(".close");
+
+  // Abre o modal
+  btn.addEventListener("click", () => {
+    modal.style.display = "block";
+  });
+
+  // Fecha ao clicar no X
+  closeBtn.addEventListener("click", () => {
+    modal.style.display = "none";
+  });
+
+  // Fecha ao clicar fora do modal
+  window.addEventListener("click", (event) => {
+    if (event.target === modal) {
+      modal.style.display = "none";
+    }
+  });
+});
+</script>
 
   <!-- Scripts
   <script type="module">

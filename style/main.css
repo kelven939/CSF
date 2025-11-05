@@ -1144,3 +1144,122 @@ footer p{
   0% { background-position: 0% center; }
   100% { background-position: 100% center; }
 }
+
+
+/* Fundo do modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  padding-top: 80px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Conteúdo */
+.modal-content {
+  background-color: #fff;
+  margin: auto;
+  padding: 30px;
+  border-radius: 18px;
+  width: 90%;
+  max-width: 900px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+  animation: fadeIn 0.4s ease;
+  border-top: 6px solid #3533cd;
+}
+
+/* Botão fechar (X) */
+.close {
+  color: #ff0000;
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+.close:hover {
+  color: #b30000;
+  transform: scale(1.1);
+}
+
+/* Título principal */
+.modal-content h2 {
+  font-size: 28px;
+  text-align: center;
+  font-weight: 700;
+  background: linear-gradient(45deg, #000000, #3533cd);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 25px;
+}
+
+/* Lista dos cursos */
+.cursos-lista {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+/* Cada curso */
+.curso-item {
+  background: #f9f9ff;
+  border-radius: 16px;
+  padding: 25px 20px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #eee;
+}
+.curso-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 18px rgba(53, 51, 205, 0.35);
+}
+
+.curso-item i {
+  font-size: 42px;
+  background: linear-gradient(45deg, #000000, #3533cd);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 12px;
+}
+
+/* Título e descrição do curso */
+.curso-item h3 {
+  color: #000;
+  font-size: 18px;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+.curso-item p {
+  color: #444;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.curso-item button {
+  margin-top: 15px;
+  background: linear-gradient(45deg, #000000, #3533cd);
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+.curso-item button:hover {
+  opacity: 0.9;
+  transform: scale(1.05);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
