@@ -35,27 +35,22 @@ function copyText(text) {
     });
   });
 
-
-
-  // Botão "Voltar à Página principal"
-document.getElementById("backBtn").addEventListener("click", () => {
-  window.location.href = "index.html"; // ou outro link do site
-});
-
-// Modal Saber Mais
+// Modal
 const modal = document.getElementById("solidarityModal");
 const openModalBtn = document.getElementById("openModal");
 const closeModal = modal.querySelector(".close");
 
+// Abrir modal
 openModalBtn.addEventListener("click", () => {
   modal.style.display = "block";
 });
 
+// Fechar modal ao clicar no X
 closeModal.addEventListener("click", () => {
   modal.style.display = "none";
 });
 
-// Fechar ao clicar fora do modal
+// Fechar modal ao clicar fora da caixa
 window.addEventListener("click", (e) => {
   if (e.target == modal) {
     modal.style.display = "none";
