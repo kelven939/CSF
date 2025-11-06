@@ -207,3 +207,98 @@
     .qr-inner { width: 110px; height: 110px; }
     .tabs { flex-direction: column; gap: 10px; }
   }
+
+  /* Container */
+.buttons-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.action-btn {
+  padding: 12px 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  color: #fff;
+  background: linear-gradient(90deg, #000000, #3533cd);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+
+  text-decoration: none;
+  display: inline-block;
+}
+
+.action-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+/* Modal */
+.modal {
+  display: none; 
+  position: fixed;
+  z-index: 999;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.7);
+  animation: fadeIn 0.4s;
+}
+
+.modal-content {
+  background-color: #1e1e2f;
+  color: #fff;
+  margin: 10% auto;
+  padding: 30px;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 600px;
+  text-align: left;
+  position: relative;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+}
+
+.modal-content h2 {
+  background: linear-gradient(90deg, #ffffff, #a8c0ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 15px;
+}
+
+.modal-content p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.modal .close {
+  color: #ff4c4c;
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.modal .close:hover {
+  transform: rotate(90deg);
+  color: #ff0000;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+/* Responsivo: mobile */
+@media screen and (max-width: 700px) {
+  .buttons-container {
+    flex-direction: column;
+    gap: 15px;
+  }
+}

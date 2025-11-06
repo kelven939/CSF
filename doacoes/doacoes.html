@@ -3,27 +3,57 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="IFG" />
+<meta name="theme-color" content="#3533cd" />
+  <!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="./doacoes.css">
-<title>Doações - IFG</title>
+<link rel="shortcut icon" href="../images/logo/logoIFG.png" type="image/x-icon">
+<title>Doações-IFG</title>
 </head>
 <body>
 
 <div class="donation-section">
+
+<section class="homeSabermais">
+  <div class="container buttons-container">
+    <a href="../index.html" class="action-btn">Voltar à Página principal</a>
+    <button class="action-btn" id="openModal">Saber mais da Campanha de Solidariedade</button>
+  </div>
+</section>
+
+<!-- Modal Saber Mais -->
+<div id="solidarityModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Campanha de Solidariedade - IFG</h2>
+    <p>
+      A Campanha de Solidariedade do Instituto de Formação Global-IFG tem como objetivo apoiar crianças vulneráveis no mundo,
+      acesso à educação. Cada doação transforma vidas e fortalece o futuro da nossa comunidade.
+    </p>
+    <p><strong>Como contribuir:</strong> Escolha um método de doação na seção abaixo e siga as instruções para fazer sua contribuição com segurança.</p>
+  </div>
+</div>
+
   <h2 class="gradient-text">Campanha de Solidariedade</h2>
-  <p>Estamos empenhados em ajudar <span class="gradient-tex">crianças vulneráveis ao redor do mundo</span>. Sua doação contribui para fornecer acesso a <strong>educação</strong>, <strong>alimentação saudável</strong>, <strong>assistência médica</strong> e <strong>proteção básica</strong>. Junte-se a nós e transforme vidas!</p>
+  <p>Estamos empenhados em ajudar <span class="gradient-tex">crianças vulneráveis ao redor do mundo</span>. Sua doação contribui para fornecer acesso à <strong>educação</strong>. Junte-se a nós e transforme vidas!</p>
 
   <div class="tabs">
     <button class="tab-btn active" data-tab="mpesaTab">M-pesa</button>
     <button class="tab-btn" data-tab="emolaTab">E-mola</button>
     <button class="tab-btn" data-tab="bankTab">Banco</button>
+    <button class="tab-btn" data-tab="pixTab">Pix</button>
+    <button class="tab-btn" data-tab="paypalTab">PayPal</button>
+    <button class="tab-btn" data-tab="westernTab">Western Union</button>
   </div>
 
+  <!-- M-PESA -->
   <div class="tab-content active" id="mpesaTab">
     <div class="donation-card">
       <h3>M-pesa</h3>
       <div class="qr-container"><div class="qr-inner" id="mpesaInner"></div></div>
       <div class="account-info">
-        <p><strong>Titular:</strong> Instituto de Formação Global IFG</p>
+        <p><strong>Titular:</strong> Instituto de Formação Global-IFG</p>
         <p><strong>Número:</strong> 258841441993</p>
         <p><strong>Operadora:</strong> Vodacom</p>
       </div>
@@ -31,26 +61,28 @@
     </div>
   </div>
 
+  <!-- E-MOLA -->
   <div class="tab-content" id="emolaTab">
     <div class="donation-card">
       <h3>E-mola</h3>
       <div class="qr-container"><div class="qr-inner" id="emolaInner"></div></div>
       <div class="account-info">
-        <p><strong>Titular:</strong> Instituto de Formação Global</p>
+        <p><strong>Titular:</strong> Instituto de Formação Global-IFG</p>
         <p><strong>Número:</strong> 258864214697</p>
         <p><strong>Operadora:</strong> Movitel</p>
       </div>
-      <button class="copy-btn" onclick="copyText('25886421469')">Copiar Número</button>
+      <button class="copy-btn" onclick="copyText('258864214697')">Copiar Número</button>
     </div>
   </div>
 
+  <!-- BANCO -->
   <div class="tab-content" id="bankTab">
     <div class="donation-card">
       <h3>Banco</h3>
       <div class="qr-container"><div class="qr-inner" id="bankInner"></div></div>
       <div class="account-info">
         <p><strong>Banco:</strong> BIM</p>
-        <p><strong>Titular:</strong> Instituto de Formação Global IFG</p>
+        <p><strong>Titular:</strong> Instituto de Formação Global IFG-IFG</p>
         <p><strong>IBAN:</strong> MZ59000000000000000012345</p>
         <p><strong>SWIFT/BIC:</strong> BDMZMZMX</p>
         <p><strong>Conta:</strong> 000123456789</p>
@@ -58,56 +90,49 @@
       <button class="copy-btn" onclick="copyText('000123456789')">Copiar Conta</button>
     </div>
   </div>
+
+  <!-- PIX -->
+  <div class="tab-content" id="pixTab">
+    <div class="donation-card">
+      <h3>Pix</h3>
+      <div class="qr-container"><div class="qr-inner" id="pixInner"></div></div>
+      <div class="account-info">
+        <p><strong>Chave Pix:</strong> equipe.institutoifg@gmail.com</p>
+      </div>
+      <button class="copy-btn" onclick="copyText('equipe.institutoifg@gmail.com')">Copiar Chave</button>
+    </div>
+  </div>
+
+  <!-- PAYPAL -->
+  <div class="tab-content" id="paypalTab">
+    <div class="donation-card">
+      <h3>PayPal</h3>
+      <div class="qr-container"><div class="qr-inner" id="paypalInner"></div></div>
+      <div class="account-info">
+        <p><strong>Conta PayPal:</strong> equipe.institutoifg@gmail.com</p>
+      </div>
+      <button class="copy-btn" onclick="copyText('equipe.institutoifg@gmail.com')">Copiar Conta</button>
+    </div>
+  </div>
+
+  <!-- WESTERN UNION -->
+  <div class="tab-content" id="westernTab">
+    <div class="donation-card">
+      <h3>Western Union</h3>
+      <div class="qr-container"><div class="qr-inner" id="westernInner"></div></div>
+      <div class="account-info">
+        <p><strong>Beneficiário:</strong> Instituto de Formação Global-IFG</p>
+        <p><strong>País:</strong> Moçambique</p>
+        <p><strong>Telefone:</strong> +258 84 144 1993</p>
+      </div>
+      <button class="copy-btn" onclick="copyText('+258841441993')">Copiar Número</button>
+    </div>
+  </div>
 </div>
 
 <div id="toast" class="toast"></div>
 
 <script src="https://cdn.jsdelivr.net/npm/qrcodejs2@0.0.2/qrcode.min.js"></script>
-<script>
-  function copyText(text) {
-    navigator.clipboard.writeText(text).then(() => {
-      showToast("Número copiado com sucesso!", "success");
-    }).catch(() => {
-      showToast("Falha ao copiar o número!", "error");
-    });
-  }
-
-  function showToast(message, type) {
-    const toast = document.getElementById("toast");
-    toast.className = "toast show " + type;
-    toast.textContent = message;
-    setTimeout(() => { toast.className = toast.className.replace("show", ""); }, 3000);
-  }
-
-  function generateQR(innerId, text) {
-    const container = document.getElementById(innerId);
-    container.innerHTML = '';
-    new QRCode(container, {
-      text: text,
-      width: 140,
-      height: 140,
-      colorDark : "#004080",
-      colorLight : "#ffffff",
-      correctLevel : QRCode.CorrectLevel.H
-    });
-  }
-
-  generateQR('mpesaInner', '258840000000');
-  generateQR('emolaInner', '258850000000');
-  generateQR('bankInner', 'MZ59000000000000000012345');
-
-  // Tabs interativas
-  const tabButtons = document.querySelectorAll('.tab-btn');
-  const tabContents = document.querySelectorAll('.tab-content');
-
-  tabButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      tabButtons.forEach(b => b.classList.remove('active'));
-      tabContents.forEach(c => c.classList.remove('active'));
-      btn.classList.add('active');
-      document.getElementById(btn.dataset.tab).classList.add('active');
-    });
-  });
-</script>
+<script src="./doacoes.js"></script>
 </body>
 </html>
