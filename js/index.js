@@ -54,58 +54,67 @@ $(document).ready(function(){
 
 // Inicializar Firebase
 const db = getFirestore(app);
-let container = document.querySelector(".grid-container");
+let container = document.querySelector("#Sectionbolsa .grid-container");
 
 // Function carregar bolsas de estudo
 async function carregarBolsas() {
     container.innerHTML = ""; 
 
-    const querySnapshot = await getDocs(collection(db, "bolsas"));
-    console.log("Documentos encontrados:", querySnapshot.size);
-  try {
+    try {
+        const querySnapshot = await getDocs(collection(db, "bolsas"));
+        querySnapshot.forEach((doc) => {
+            let data = doc.data();
 
-    querySnapshot.forEach((doc) => {
-      console.log("Dados da bolsa:", doc.data());
-      let data = doc.data();
-      let div = document.createElement("div");
-      div.classList.add("grid-item");
-      div.textContent = data.nome;
-      container.appendChild(div);
-    });
-  } catch (error) {
-    console.error("Erro ao carregar bolsas: ", error);
-  }
+            // Apenas exibe bolsas da seção correta
+            if(data.seccao && data.seccao === "Procurar bolsas de estudo") {
+
+                let div = document.createElement("div");
+                div.classList.add("grid-item");
+
+                div.innerHTML = `
+                    <div class="card item-card">
+                        <img src="${data.img}" alt="${data.title}" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">${data.title}</h5>
+                            <p class="card-text">${data.text}</p>
+                            <a href="${data.link}" target="_blank" class="btn btn-primary btn-sm w-100">Acessar Bolsa</a>
+                        </div>
+                    </div>
+                `;
+
+                container.appendChild(div);
+            }
+        });
+    } catch (error) {
+        console.error("Erro ao carregar bolsas: ", error);
+    }
 }
 
-// Function para carregar empregos
+// Function carregar empregos
 async function carregarEmpregos() {
-  try {
-    let jobList = document.querySelector(".job-list");
-    jobList.innerHTML = ""; 
+    try {
+        let jobList = document.querySelector(".job-list");
+        jobList.innerHTML = ""; 
 
-    const querySnapshot = await getDocs(collection(db, "empregos"));
-    console.log("Empregos encontrados:", querySnapshot.size);
-
-    querySnapshot.forEach((doc) => {
-      console.log("Dados do emprego:", doc.data());
-      let data = doc.data();
-      let jobCard = document.createElement("div");
-      jobCard.classList.add("job-card");
-      jobCard.innerHTML = `
-        <div class="job-title">${data.titulo}</div>
-        <div class="job-info">
-          <i class="fas fa-tags"></i> ${data.categoria} <br>
-          <i class="fas fa-map-marker-alt"></i> ${data.localizacao}
-        </div>
-        <a href="${data.link}" class="job-link">Ver Oferta &rsaquo;</a>
-      `;
-      jobList.appendChild(jobCard);
-    });
-  } catch (error) {
-    console.error("Erro ao carregar empregos: ", error);
-  }
+        const querySnapshot = await getDocs(collection(db, "empregos"));
+        querySnapshot.forEach((doc) => {
+            let data = doc.data();
+            let jobCard = document.createElement("div");
+            jobCard.classList.add("job-card");
+            jobCard.innerHTML = `
+                <div class="job-title">${data.titulo}</div>
+                <div class="job-info">
+                    <i class="fas fa-tags"></i> ${data.categoria} <br>
+                    <i class="fas fa-map-marker-alt"></i> ${data.localizacao}</div>
+                <a href="${data.link}" class="job-link" target="_blank">Ver Oferta &rsaquo;</a>
+            `;
+            jobList.appendChild(jobCard);
+        });
+    } catch (error) {
+        console.error("Erro ao carregar empregos: ", error);
+    }
 }
 
-// Chamar as function para carregar os dados
+// Chamar as functions
 carregarBolsas();
 carregarEmpregos();
