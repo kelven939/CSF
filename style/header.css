@@ -136,10 +136,10 @@ input[type="text"]:hover {
 	text-decoration: none;
 	margin-top: -1px !important;
 	text-decoration: none !important;
-	margin-left: -10px !important;
+	margin-left: -5px !important;
 }
 .text-logo-icon{
-	font-size: 14px;
+	font-size: 12px;
 	color: white;
 	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 	text-decoration: none;
@@ -260,7 +260,7 @@ input[type="text"]:hover {
 	}
 	.nav-menu li a{
 		color: white;
-		font-size: 14px;
+		font-size: 12px;
 		font-weight: bold;
 		
 	}
@@ -303,6 +303,12 @@ input[type="text"]:hover {
 		border-bottom: 0px solid black;
 		z-index: 1;
 		color: white !important;
+	}
+	.nav-menu li a{
+		color: white;
+		font-size: 12px;
+		font-weight: bold;
+		
 	}
   }
 
