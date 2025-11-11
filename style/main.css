@@ -690,12 +690,17 @@ p {
 		}
 		.info-quem-somos {
 			border: 0px solid red;
-			width: 335px !important;
+			width: 485px !important;
 			padding: 10px;
-			text-align: center !important;
+			text-align: justify !important;
 			margin-left: 0px !important;
 		}
-
+		.info-quem-somos h1 {
+			font-size: 28px !important;
+		}
+		.info-quem-somos p {
+			font-size: 14px !important;
+		}
 		.titlePolitica {
 			font-size: 22px;
 		}
