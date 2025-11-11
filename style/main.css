@@ -685,14 +685,14 @@ p {
 			border: 0px solid red;
 			width: 885px;
 			padding: 10px;
-			text-align: justify;
+			text-align: center;
 			margin-left: -85px;
 		}
 		.info-quem-somos {
 			border: 0px solid red;
 			width: 485px !important;
 			padding: 10px;
-			text-align: justify !important;
+			text-align: center !important;
 			margin-left: 0px !important;
 		}
 		.info-quem-somos h1 {
