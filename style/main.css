@@ -1396,3 +1396,192 @@ footer p{
 .saber-mais-btn:hover::before {
   left: 100%;
 }
+
+.cards-section {
+  background: #f9f9fb;
+  padding: 60px 20px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.cards-section .section-title {
+	font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+  position: relative;
+  background: linear-gradient(90deg, #000000, #3533cd, #000000);
+  	background-size: 200% auto;
+  	-webkit-background-clip: text;
+  	-webkit-text-fill-color: transparent;
+  	font-weight: bold;
+  	animation: gradientMove 3s linear infinite;
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 30px 25px;
+  transform: translateY(50px);
+  opacity: 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-bottom: 7px solid #3533cd;
+}
+
+.card.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.card-icon {
+  font-size: 2.8rem;
+  background: linear-gradient(90deg, #000000, #3533cd, #000000);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientMove 3s linear infinite;
+  margin-bottom: 15px;
+  text-shadow: 0 0 10px rgba(53, 51, 205, 0.4), 
+               0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}
+
+.card h3 {
+  font-size: 2.4rem;
+  margin-bottom: 15px;
+  font-weight: 700;
+  background: linear-gradient(90deg, #000000, #3533cd, #000000);
+  	background-size: 200% auto;
+  	-webkit-background-clip: text;
+  	-webkit-text-fill-color: transparent;
+  	font-weight: bold;
+  	animation: gradientMove 3s linear infinite;
+}
+
+.card p {
+  color: #444;
+  font-size: 1.5rem;
+  line-height: 1.6;
+  text-align: center;
+}
+
+
+.contato-lista-section {
+  background: #f9f9fb;
+  padding: 70px 20px;
+}
+
+.contato-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.gradient-text {
+  font-size: 3rem;
+  font-weight: bold;
+  background: linear-gradient(90deg, #000000, #3533cd, #000000);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientMove 3s linear infinite;
+  margin-bottom: 15px;
+}
+
+.descricao {
+  color: #333;
+  line-height: 1.6;
+  font-size: 1.5rem;
+  margin-bottom: 25px;
+  text-align: justify;
+}
+
+.info-lista {
+  list-style: none;
+  padding: 0;
+}
+
+.info-lista li {
+  font-size: 1.5rem;
+  color: #444;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.info-lista i {
+  font-size: 1.5rem;
+  background: linear-gradient(90deg, #000000, #3533cd, #000000);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientMove 3s linear infinite;
+}
+
+.contato-form {
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 40px 30px;
+  text-align: center;
+}
+
+.contato-form p {
+  color: #555;
+  font-size: 1.5rem;
+  margin-bottom: 25px;
+}
+
+.contato-form input {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  transition: border-color 0.3s ease;
+}
+
+.contato-form input:focus {
+  outline: none;
+  border-color: #3533cd;
+}
+
+.btn-enviar {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #000000, #3533cd, #000000);
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-enviar:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}
