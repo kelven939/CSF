@@ -38,8 +38,13 @@
           </a>
 				</li>
           <li class="nav-item">
-					<a href="#quem-somos" class="nav-item nav-link destaqueMenu" title="Quem Somos">
+					<a href="#quemSomos" class="nav-item nav-link destaqueMenu" title="Quem Somos">
 						Quem Somos
+					</a>
+				</li>
+          <li class="nav-item">
+					<a href="#equipeIFG" class="nav-item nav-link destaqueMenu" title="Equipe IFG">
+						Equipe IFG
 					</a>
 				</li>
           <li class="nav-item">
@@ -48,18 +53,13 @@
 					</a>
 				</li>
 				<li class="nav-item">
-					<a href="#Sectionbolsa" class="nav-item nav-link destaqueMenu" title="Eventos">
+					<a href="#bolsasEstudos" class="nav-item nav-link destaqueMenu" title="Eventos">
 						Bolsas
 					</a>
 				</li>
 				<li class="nav-item">
 					<a href="#sectionJobs" class="nav-item nav-link destaqueMenu" title="Sobre nós">
 						Empregos
-					</a>
-				</li>
-        <li class="nav-item">
-					<a href="#footer" class="nav-item nav-link destaqueMenu" title="Contactos">
-            Contacte-nos
 					</a>
 				</li>
         <li class="nav-item">
@@ -70,6 +70,11 @@
 				<li class="nav-item">
 					<a href="#faq" class="nav-item nav-link faq destaqueMenu" title="FAQ - Perguntas Frequentes">
 						FAQ
+					</a>
+				</li>
+        <li class="nav-item">
+					<a href="#footer" class="nav-item nav-link destaqueMenu" title="Contactos">
+            Contacte-nos
 					</a>
 				</li>
 			</ul>
@@ -112,7 +117,7 @@
       <div class="col-md-8 text-start text-justify contentBanner">
         <h2 class="banner-highlight">Chegou o momento de transformar a sua história!</h2>
         <p class="banner-text">
-          O <strong>Instituto de Formação Global – IFG</strong> é uma instituição de ensino comprometida com o 
+          O <strong>Instituto de Formação Global–IFG</strong> é uma instituição de ensino comprometida com o 
           desenvolvimento sustentável e a capacitação de cidadãos preparados para atuar com excelência 
           nos contextos local, nacional, regional e internacional.
         </p>
@@ -125,7 +130,7 @@
   <!-- Main Content -->
   <main>
     
-    <section class="secCard">
+    <section class="secCard" id="bolsasEstudos">
       <div class="container">
           <h1 class="tituloCard gradient-text">
               <i class="fas fa-graduation-cap"></i> Bolsas de estudos para Licenciatura, Mestrado e Doutorado
@@ -138,11 +143,13 @@
   <div class="container">
     <div id="cardContainer" class="card-container"></div>
 
-      <!-- Paginação -->
-      <div class="pagination">
-        <button id="prevPage" disabled aria-disabled="true">⬅ Anterior</button>
-        <button id="nextPage">Próximo ➡</button>
-    </div>
+  <div class="pagination" style="display:flex; gap:10px; justify-content:center; margin-top:20px;">
+  <button id="prevPage" disabled aria-disabled="true" class="page-btn">
+    <i class="fas fa-chevron-left"></i>
+  </button>
+  <button id="nextPage" class="page-btn">
+    <i class="fas fa-chevron-right"></i>
+  </button>
 </div>
 
   </section>
@@ -166,9 +173,9 @@
       </div>
 
       <div class="service-card fade-up">
-        <i class="service-icon fas fa-user-tie"></i>
-        <div class="service-title gradient-text">Consultoria</div>
-        <p class="service-description">Análise e soluções estratégicas para o crescimento organizacional.</p>
+        <i class="service-icon fas fa-globe"></i>
+        <div class="service-title gradient-text">Divulgação de Oportunidades no Exterior</div>
+        <p class="service-description">Informações sobre bolsas de estudo e empregos fora do país.</p>
       </div>
 
       <div class="service-card fade-up">
@@ -178,22 +185,28 @@
       </div>
 
       <div class="service-card fade-up">
+        <i class="service-icon fas fa-user-tie"></i>
+        <div class="service-title gradient-text">Consultoria Acadêmica</div>
+        <p class="service-description">Análise e soluções estratégicas para o crescimento organizacional.</p>
+      </div>
+
+      <div class="service-card fade-up">
         <i class="service-icon fas fa-briefcase"></i>
-        <div class="service-title gradient-text">Mentoria para Empresas</div>
+        <div class="service-title gradient-text">Consultoria para Empresas</div>
         <p class="service-description">Programas de desenvolvimento e orientação para equipes corporativas.</p>
       </div>
 
       <div class="service-card fade-up">
         <i class="service-icon fas fa-hands-helping"></i>
-        <div class="service-title gradient-text">Assistência</div>
+        <div class="service-title gradient-text">Assistência Completa ou para um Programa</div>
         <p class="service-description">Suporte em todo o processo de candidatura.</p>
       </div>
 
-      <div class="service-card fade-up">
+      <!--<div class="service-card fade-up">
         <i class="service-icon fas fa-headset"></i>
         <div class="service-title gradient-text">Assessoria</div>
         <p class="service-description">Acompanhamento personalizado em processos administrativos e acadêmicos.</p>
-      </div>
+      </div>-->
 
       <div class="service-card fade-up">
         <i class="service-icon fas fa-language"></i>
@@ -213,11 +226,6 @@
         <p class="service-description">Treinamento para exames finais e de admissão.</p>
       </div>
 
-      <div class="service-card fade-up">
-        <i class="service-icon fas fa-globe"></i>
-        <div class="service-title gradient-text">Divulgação de Oportunidades no Exterior</div>
-        <p class="service-description">Informações sobre bolsas de estudo e empregos fora do país.</p>
-      </div>
     </div>
   </div>
 </section>
@@ -394,7 +402,7 @@
     <div class="divider"></div>
 
     <div class="job-list" id="jobList">
-      <!-- Os empregos do Firebase -->
+      <!-- Os empregos -->
     </div>
   </div>
 </section>
@@ -430,7 +438,7 @@
   </div>
 </section>
 
-  <section class="section-quem-somos">
+  <section class="section-quem-somos" id="quemSomos">
       <div class="container">
         <div class="container-contents">
 
@@ -464,72 +472,92 @@
       </div>
     </section>
 
-    <section class="quemSomos" id="quem-somos">
+    <section class="quemSomos" id="equipeIFG">
 
       <div class="container">
         <h2 class="titleTeam gradient-text">Conheça a equipe Instituto de Formação Global-IFG</h2>
     
         <div class="grid-containers">
-            <div class="team-member">
-                <img src="./images/members/Amelia.jpg" alt="Equipe CSF" loading="lazy">
-                <h4>Amélia Serafina Gundana</h4>
-                <p>Graduação em Ciências Atuariais (Moç) (Moçambicana)</p>
-            </div>
-    
-            <div class="team-member">
-                <img src="./images/members/Yola.jpg" alt="Equipe CSF" loading="lazy">
-                <h4>Yolanda Rafael Ofesse</h4>
-                <p>Graduanda em Relações Internacionais (Brasil) (Moçambicana) </p>
-            </div>
 
-            <div class="team-member">
-                <img src="./images/members/Neyde.jpg" alt="Equipe CSF" loading="lazy">
-                <h4>Neyde Saldanha Jaime</h4>
-                <p>Graduanda em Análises Clínicas (Angola) (Angolana) </p>
-            </div>
-    
-            <div class="team-member">
-                <img src="./images/members/Yurica.jpg" alt="Equipe CSF" loading="lazy">
-                <h4>Yurica Mavaieie</h4>
-                <p>Formada em Relações Internacionais e Diplomacia (Moçambicana)</p>
-            </div>
-
-             <div class="team-member">
-                <img src="./images/members/Maria.jpg" alt="Equipe CSF" loading="lazy">
-                <h4>Maria Clara Nadimfesse</h4>
-                <p>Formanda em Eng. Mecatrônica (Brasil) (Brasileira) </p>
-            </div>
-
-            <div class="team-member">
+              <div class="team-member">
                 <img src="./images/members/Marcos.jpg" alt="Equipe CSF" loading="lazy">
                 <h4>Muteruco A. Materusse</h4>
+                <p>Moçambicano</p>
                 <p>CEO e Fundador do IFG</p>
-                <p>Analista de Excelência Operacional (Moçambicano)</p>
+                <p>Analista de Excelência Operacional</p>
             </div>
 
-             <div class="team-member">
+            <div class="team-member">
                 <img src="./images/members/Arlindo.jpg" alt="Equipe CSF" loading="lazy">
                 <h4>Arlindo Muacamissa</h4>
+                <p>Moçambicano</p>
+                <p><strong>Coordenador Adm</strong></p>
                 <p>Mestre em RH</p>
-                <p>Licenciado em Tradução e Interpretação de Línguas (Moçambicano)</p>
-            </div>
-    
-            <div class="team-member">
-                <img src="./images/members/Profile.png" alt="Equipe CSF" loading="lazy">
-                <h4>Kelven Bulha</h4>
-                <p>Graduação em Eng. Informática (Μος) (Moçambicano)</p>
-            </div>
-
-             <div class="team-member">
-                <img src="./images/members/Janu.jpg" alt="Equipe CSF" loading="lazy">
-                <h4>Januário Alexandre José</h4>
-                <p>Formando em Filosofia (Μος) (Moçambicano)</p>
+                <p>Licenciado em Tradução e Interpretação de Línguas</p>
             </div>
 
             <div class="team-member">
                 <img src="./images/members/Victor.jpg" alt="Equipe CSF" loading="lazy">
                 <h4>Victorino João Prospero</h4>
-                <p>Formado em Economia (Moçambicano)</p>
+                <p>Moçambicano</p>
+                <p><strong>Supervisor</strong></p>
+                <p>Formado em Economia</p>
+            </div>
+
+            <div class="team-member">
+                <img src="./images/members/Maria.jpg" alt="Equipe CSF" loading="lazy">
+                <h4>Maria Clara Nadimfesse</h4>
+                <p>Brasileira</p>
+                <p><strong>Coordenadora de P.S e Marketing</strong></p>
+                <p>Formanda em Eng. Mecatrônica (Brasil)</p>
+            </div>
+
+            <div class="team-member">
+                <img src="./images/members/Amelia.jpg" alt="Equipe CSF" loading="lazy">
+                <h4>Amélia Serafina Gundana</h4>
+                <p>Moçambicana</p>
+                <p><strong>Secretaria</strong></p>
+                <p>Graduação em Ciências Atuariais (Moç)</p>
+            </div>
+    
+            <div class="team-member">
+                <img src="./images/members/Yola.jpg" alt="Equipe CSF" loading="lazy">
+                <h4>Yolanda Rafael Ofesse</h4>
+                <p>Moçambicana</p>
+                <p><strong>Assistente</strong></p>
+                <p>Graduanda em Relações Internacionais (Brasil)</p>
+            </div>
+
+            <div class="team-member">
+                <img src="./images/members/Neyde.jpg" alt="Equipe CSF" loading="lazy">
+                <h4>Neyde Saldanha Jaime</h4>
+                <p>Angolana</p>
+                <p><strong>Assistente</strong></p>
+                <p>Graduanda em Análises Clínicas (Angola)</p>
+            </div>
+    
+            <div class="team-member">
+                <img src="./images/members/Profile.png" alt="Equipe CSF" loading="lazy">
+                <h4>Kelven Bulha</h4>
+                <p>Moçambicano</p>
+                <p><strong>Copywriter</strong></p>
+                <p>Graduação em Eng. Informática (Μος)</p>
+            </div>
+
+             <div class="team-member">
+                <img src="./images/members/Janu.jpg" alt="Equipe CSF" loading="lazy">
+                <h4>Januário Alexandre José</h4>
+                 <p>Moçambicano</p>
+                <p><strong>Consultor</strong></p>
+                <p>Formando em Filosofia (Μος)</p>
+            </div>
+
+            <div class="team-member">
+                <img src="./images/members/Yurica.jpg" alt="Equipe CSF" loading="lazy">
+                <h4>Yurica Mavaieie</h4>
+                <p>Moçambicana</p>
+                <p><strong>Estagiária</strong></p>
+                <p>Formada em Relações Internacionais e Diplomacia</p>
             </div>
 
         </div>
@@ -684,7 +712,7 @@
   </div>-->  
 </footer>
 
-       <!-- Botão de Voltar ao Topo -->
+       <!-- Voltar ao Topo -->
        <button id="btnTopo" class="btnRolagem" onclick="voltarAoTopo()">
         <i class="fas fa-arrow-up"></i>
     </button>
@@ -695,7 +723,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const btn = document.getElementById("openCursosModal");
   const closeBtn = modal.querySelector(".close");
 
-  // Abre o modal
+  // modal
   btn.addEventListener("click", () => {
     modal.style.display = "block";
   });
@@ -740,11 +768,9 @@ document.addEventListener("DOMContentLoaded", function() {
   </script> -->
 
 <script type="module">
-  // Importar funções necessárias do Firebase
   import { initializeApp } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
-  import { getFirestore, collection, getDocs, addDoc } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore.js";
+  import { getFirestore, collection, getDocs, addDoc, onSnapshot } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore.js";
 
-  // Configuração Firebase
   const firebaseConfig = {
     apiKey: "AIzaSyDqw0C_jUX0XoZNMCfWGcgahTmXcQ2AmsI",
     authDomain: "ifg-site-295ac.firebaseapp.com",
@@ -755,20 +781,19 @@ document.addEventListener("DOMContentLoaded", function() {
     measurementId: "G-8NQLWJ9BWQ"
   };
 
-  // Inicializar Firebase e Firestore
   const app = initializeApp(firebaseConfig);
-  const db = getFirestore(app);
+  window.db = getFirestore(app);
 
-   // Carregar bolsas do Firestore
-  async function carregarBolsas() {
-    const querySnapshot = await getDocs(collection(db, "bolsas"));
+   // Carregar bolsas
+    async function carregarBolsas() {
+    const querySnapshot = await getDocs(collection(window.db, "bolsas"));
 
     const cardsData = [];
     querySnapshot.forEach((doc) => {
-      cardsData.push(doc.data());
+    cardsData.push(doc.data());
     });
 
-  // Enviar dados do formulário
+  // Enviar dados do form
   const form = document.getElementById("form-lista-espera");
   const mensagemFeedback = document.getElementById("mensagem-feedback");
 
@@ -804,7 +829,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   });
 
-    // Paginação
+    // Paginacao
     let currentPage = 1;
     const cardsPerPage = 4;
     const totalPages = Math.ceil(cardsData.length / cardsPerPage);
@@ -825,6 +850,9 @@ document.addEventListener("DOMContentLoaded", function() {
           <div class="custom-card-body">
               <h5 class="custom-card-title">${card.title}</h5>
               <p class="custom-card-text">${card.text}</p>
+               <a href="${card.link || '#'}" target="_blank" class="btn btn-primary btn-sm w-100">
+                <i class="fas fa-external-link-alt"></i> Acessar Bolsa
+              </a>
           </div>
         `;
         cardContainer.appendChild(cardElement);
@@ -853,28 +881,28 @@ document.addEventListener("DOMContentLoaded", function() {
 
   carregarBolsas();
 
-  // Função para carregar empregos
+  //empregos
   async function carregarEmpregos() {
     try {
-      console.log("🔍 Buscando empregos...");
+      console.log("Buscando empregos...");
       const jobList = document.getElementById("jobList");
       jobList.innerHTML = "";
 
       const querySnapshot = await getDocs(collection(db, "empregos"));
       if (querySnapshot.empty) {
-        console.log("⚠️ Nenhum emprego encontrado no Firestore.");
+        console.log("Nenhum emprego encontrado.");
         jobList.innerHTML = "<p>Nenhum emprego disponível.</p>";
       }
 
       querySnapshot.forEach((doc) => {
         const dados = doc.data();
-        console.log("📄 Documento encontrado:", dados);
+        console.log("Documento encontrado:", dados);
 
         jobList.innerHTML += `
           <div class="job-card">
             <div class="job-title">${dados.titulo}</div>
             <div class="job-info">
-              <i class="fas fa-tags"></i> ${dados.empregador} <br>
+              <i class="fas fa-tags"></i> ${dados.categoria} <br>
               <i class="fas fa-map-marker-alt"></i> ${dados.localizacao}
             </div>
             <a href="${dados.link}" target="_blank" class="job-link">Ver Oferta &rsaquo;</a>
@@ -882,7 +910,7 @@ document.addEventListener("DOMContentLoaded", function() {
         `;
       });
     } catch (e) {
-      console.error("❌ Erro ao carregar empregos:", e);
+      console.error("Erro ao carregar empregos:", e);
     }
   }
 
@@ -890,14 +918,13 @@ document.addEventListener("DOMContentLoaded", function() {
 </script>
 
 <script>
-  // Mostrar os cards
   const cards = document.querySelectorAll('.card');
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('show');
-        observer.unobserve(entry.target); // Nao repetir
+        observer.unobserve(entry.target);
       }
     });
   }, { threshold: 0.2 });

@@ -1,58 +1,43 @@
-let cardsData = [];
-let currentPage = 1;
-const cardsPerPage = 4;
+import { collection, getDocs } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore.js";
 
-async function fetchCards() {
-  const snapshot = await db.collection("bolsas").get();
-  cardsData = snapshot.docs.map(doc => doc.data());
-  renderCards();
+const container = document.querySelector("#Sectionbolsa .grid-container");
+
+async function carregarBolsas() {
+  if (!window.db) {
+    setTimeout(carregarBolsas, 100);
+    return;
+  }
+
+  container.innerHTML = "";
+
+  try {
+    const querySnapshot = await getDocs(collection(window.db, "bolsas"));
+    querySnapshot.forEach((docu) => {
+      const data = docu.data();
+
+      if (!data.seccao || data.seccao === "Procurar bolsas de estudo") {
+        const div = document.createElement("div");
+        div.classList.add("grid-item");
+
+        div.innerHTML = `
+          <div class="card item-card">
+            <img src="${data.img || 'https://via.placeholder.com/300x150'}" alt="${data.title || 'Bolsa'}" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title">${data.title || 'Sem título'}</h5>
+              <p class="card-text">${data.text || 'Sem descrição'}</p>
+              <a href="${data.link || '#'}" target="_blank" class="btn btn-primary btn-sm w-100 btnlink">
+                <i class="fas fa-external-link-alt"></i> Acessar Bolsa
+              </a>
+            </div>
+          </div>
+        `;
+
+        container.appendChild(div);
+      }
+    });
+  } catch (error) {
+    console.error("Erro ao carregar bolsas: ", error);
+  }
 }
 
-function renderCards() {
-  const cardContainer = document.getElementById('cardContainer');
-  cardContainer.innerHTML = "";
-
-  const start = (currentPage - 1) * cardsPerPage;
-  const end = start + cardsPerPage;
-  const paginatedCards = cardsData.slice(start, end);
-
-  paginatedCards.forEach(card => {
-    const cardElement = document.createElement("div");
-    cardElement.classList.add("custom-card");
-    cardElement.innerHTML = `
-      <img src="${card.img}" alt="${card.title}" loading="lazy">
-      <div class="custom-card-body">
-        <h5 class="custom-card-title">${card.title}</h5>
-        <p class="custom-card-text">${card.text}</p>
-      </div>
-    `;
-    cardContainer.appendChild(cardElement);
-  });
-
-  document.getElementById('prevPage').disabled = currentPage === 1;
-  document.getElementById('nextPage').disabled = currentPage === Math.ceil(cardsData.length / cardsPerPage);
-}
-
-document.getElementById('prevPage').addEventListener('click', () => {
-  if (currentPage > 1) {
-    currentPage--;
-    renderCards();
-  }
-});
-
-document.getElementById('nextPage').addEventListener('click', () => {
-  if (currentPage < Math.ceil(cardsData.length / cardsPerPage)) {
-    currentPage++;
-    renderCards();
-  }
-});
-
-// Inicializar pegando do Firestore
-fetchCards();
-
-document.querySelectorAll('.grid-item').forEach(item => {
-  item.addEventListener('click', () => {
-    const area = item.getAttribute('data-area');
-    window.location.href = `bolsas.html?area=${area}`;
-  });
-});
+carregarBolsas();
