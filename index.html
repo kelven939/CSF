@@ -603,7 +603,7 @@
     </div>
     </section>
 
-    <section id="contato-lista" class="contato-lista-section">
+   <section id="contato-lista" class="contato-lista-section">
   <div class="contato-container">
     <div class="contato-info">
       <h2 class="gradient-text">Entre em Contato</h2>
@@ -623,12 +623,15 @@
       <h3 class="gradient-text">Lista de Espera</h3>
       <p>Inscreva-se para receber informações sobre novas formações e oportunidades globais.</p>
       
-      <form>
-        <input type="text" placeholder="Nome completo" required>
-        <input type="email" placeholder="Email" required>
-        <input type="text" placeholder="Curso ou área de interesse">
+      <form id="form-lista-espera">
+        <input type="text" id="nome" placeholder="Nome completo" required>
+        <input type="email" id="email" placeholder="Email" required>
+        <input type="text" id="curso" placeholder="Curso ou área de interesse">
         <button type="submit" class="btn-enviar">Enviar</button>
       </form>
+
+      <!-- Mensagem de feedback -->
+      <p id="mensagem-feedback" style="margin-top:10px; font-weight:bold;"></p>
     </div>
   </div>
 </section>
@@ -737,8 +740,9 @@ document.addEventListener("DOMContentLoaded", function() {
   </script> -->
 
 <script type="module">
+  // Importar funções necessárias do Firebase
   import { initializeApp } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
-  import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore.js";
+  import { getFirestore, collection, getDocs, addDoc } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore.js";
 
   // Configuração Firebase
   const firebaseConfig = {
@@ -751,7 +755,7 @@ document.addEventListener("DOMContentLoaded", function() {
     measurementId: "G-8NQLWJ9BWQ"
   };
 
-  // Inicializar Firebase
+  // Inicializar Firebase e Firestore
   const app = initializeApp(firebaseConfig);
   const db = getFirestore(app);
 
@@ -763,6 +767,42 @@ document.addEventListener("DOMContentLoaded", function() {
     querySnapshot.forEach((doc) => {
       cardsData.push(doc.data());
     });
+
+  // Enviar dados do formulário
+  const form = document.getElementById("form-lista-espera");
+  const mensagemFeedback = document.getElementById("mensagem-feedback");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const nome = document.getElementById("nome").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const curso = document.getElementById("curso").value.trim();
+
+    if (!nome || !email) {
+      mensagemFeedback.style.color = "red";
+      mensagemFeedback.textContent = "Por favor, preencha os campos obrigatórios.";
+      return;
+    }
+
+    try {
+      await addDoc(collection(db, "listaespera"), {
+        nome,
+        email,
+        curso,
+        data: new Date().toISOString()
+      });
+
+      mensagemFeedback.style.color = "green";
+      mensagemFeedback.textContent = "Registro enviado com sucesso! Obrigado por se inscrever.";
+      form.reset();
+
+    } catch (error) {
+      console.error("Erro ao enviar dados:", error);
+      mensagemFeedback.style.color = "red";
+      mensagemFeedback.textContent = "Ocorreu um erro ao enviar. Tente novamente.";
+    }
+  });
 
     // Paginação
     let currentPage = 1;
