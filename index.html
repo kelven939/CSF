@@ -655,7 +655,7 @@
         <input type="text" id="nome" placeholder="Nome completo" required>
         <input type="email" id="email" placeholder="Email" required>
         <input type="text" id="curso" placeholder="Curso ou área de interesse">
-        <button type="submit" class="btn-enviar">Enviar</button>
+        <button type="submit" class="btn-enviar spinner-border-sm">Enviar</button>
       </form>
 
       <!-- Mensagem de feedback -->
@@ -797,37 +797,48 @@ document.addEventListener("DOMContentLoaded", function() {
   const form = document.getElementById("form-lista-espera");
   const mensagemFeedback = document.getElementById("mensagem-feedback");
 
-  form.addEventListener("submit", async (e) => {
-    e.preventDefault();
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
 
-    const nome = document.getElementById("nome").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const curso = document.getElementById("curso").value.trim();
+  const nome = document.getElementById("nome").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const curso = document.getElementById("curso").value.trim();
 
-    if (!nome || !email) {
-      mensagemFeedback.style.color = "red";
-      mensagemFeedback.textContent = "Por favor, preencha os campos obrigatórios.";
-      return;
-    }
+  if (!nome || !email) {
+    mensagemFeedback.style.color = "red";
+    mensagemFeedback.textContent = "Por favor, preencha os campos obrigatórios.";
+    return;
+  }
 
-    try {
-      await addDoc(collection(db, "listaespera"), {
-        nome,
-        email,
-        curso,
-        data: new Date().toISOString()
-      });
+  const submitButton = form.querySelector("button[type='submit']");
+  submitButton.disabled = true;
 
-      mensagemFeedback.style.color = "green";
-      mensagemFeedback.textContent = "Registro enviado com sucesso! Obrigado por se inscrever.";
-      form.reset();
+  const spinner = document.createElement("span");
+  spinner.classList.add("spinner-border", "spinner-border-sm");
+  spinner.setAttribute("role", "status");
+  spinner.setAttribute("aria-hidden", "true");
+  submitButton.appendChild(spinner);
 
-    } catch (error) {
-      console.error("Erro ao enviar dados:", error);
-      mensagemFeedback.style.color = "red";
-      mensagemFeedback.textContent = "Ocorreu um erro ao enviar. Tente novamente.";
-    }
-  });
+  try {
+    await addDoc(collection(db, "listaespera"), {
+      nome,
+      email,
+      curso,
+      data: new Date().toISOString()
+    });
+
+    mensagemFeedback.style.color = "green";
+    mensagemFeedback.textContent = "Registro enviado com sucesso! Obrigado por se inscrever.";
+    form.reset();
+  } catch (error) {
+    console.error("Erro ao enviar dados:", error);
+    mensagemFeedback.style.color = "red";
+    mensagemFeedback.textContent = "Ocorreu um erro ao enviar. Tente novamente.";
+  } finally {
+    submitButton.removeChild(spinner);
+    submitButton.disabled = false;
+  }
+});
 
     // Paginacao
     let currentPage = 1;

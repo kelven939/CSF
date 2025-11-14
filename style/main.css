@@ -1644,3 +1644,9 @@ footer p{
   opacity: 0.5;
   cursor: not-allowed;
 }
+
+.spinner-border-sm {
+  border-width: 0.15em;
+  margin-left: 5px;
+  vertical-align: text-bottom;
+}
