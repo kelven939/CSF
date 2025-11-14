@@ -784,148 +784,131 @@ document.addEventListener("DOMContentLoaded", function() {
   const app = initializeApp(firebaseConfig);
   window.db = getFirestore(app);
 
-   // Carregar bolsas
-    async function carregarBolsas() {
-    const querySnapshot = await getDocs(collection(window.db, "bolsas"));
+    const form = document.getElementById("form-lista-espera");
+    const mensagemFeedback = document.getElementById("mensagem-feedback");
 
-    const cardsData = [];
-    querySnapshot.forEach((doc) => {
-    cardsData.push(doc.data());
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const nome = document.getElementById("nome").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const curso = document.getElementById("curso").value.trim();
+
+      if (!nome || !email) {
+        mensagemFeedback.style.color = "red";
+        mensagemFeedback.textContent = "Por favor, preencha os campos obrigatórios.";
+        return;
+      }
+
+      const submitButton = form.querySelector("button[type='submit']");
+      submitButton.disabled = true;
+
+      const spinner = document.createElement("span");
+      spinner.classList.add("spinner-border", "spinner-border-sm", "ms-2");
+      spinner.setAttribute("role", "status");
+      spinner.setAttribute("aria-hidden", "true");
+      submitButton.appendChild(spinner);
+
+      try {
+        await addDoc(collection(db, "listaespera"), {
+          nome,
+          email,
+          curso,
+          data: new Date().toISOString()
+        });
+
+        mensagemFeedback.style.color = "green";
+        mensagemFeedback.textContent = "Registro enviado com sucesso! Obrigado por se inscrever.";
+        form.reset();
+      } catch (error) {
+        console.error("Erro ao enviar dados:", error);
+        mensagemFeedback.style.color = "red";
+        mensagemFeedback.textContent = "Ocorreu um erro ao enviar. Tente novamente.";
+      } finally {
+        submitButton.removeChild(spinner);
+        submitButton.disabled = false;
+      }
     });
 
-  // Enviar dados do form
-  const form = document.getElementById("form-lista-espera");
-  const mensagemFeedback = document.getElementById("mensagem-feedback");
-
-form.addEventListener("submit", async (e) => {
-  e.preventDefault();
-
-  const nome = document.getElementById("nome").value.trim();
-  const email = document.getElementById("email").value.trim();
-  const curso = document.getElementById("curso").value.trim();
-
-  if (!nome || !email) {
-    mensagemFeedback.style.color = "red";
-    mensagemFeedback.textContent = "Por favor, preencha os campos obrigatórios.";
-    return;
-  }
-
-  const submitButton = form.querySelector("button[type='submit']");
-  submitButton.disabled = true;
-
-  const spinner = document.createElement("span");
-  spinner.classList.add("spinner-border", "spinner-border-sm");
-  spinner.setAttribute("role", "status");
-  spinner.setAttribute("aria-hidden", "true");
-  submitButton.appendChild(spinner);
-
-  try {
-    await addDoc(collection(db, "listaespera"), {
-      nome,
-      email,
-      curso,
-      data: new Date().toISOString()
-    });
-
-    mensagemFeedback.style.color = "green";
-    mensagemFeedback.textContent = "Registro enviado com sucesso! Obrigado por se inscrever.";
-    form.reset();
-  } catch (error) {
-    console.error("Erro ao enviar dados:", error);
-    mensagemFeedback.style.color = "red";
-    mensagemFeedback.textContent = "Ocorreu um erro ao enviar. Tente novamente.";
-  } finally {
-    submitButton.removeChild(spinner);
-    submitButton.disabled = false;
-  }
-});
-
-    // Paginacao
-    let currentPage = 1;
-    const cardsPerPage = 4;
-    const totalPages = Math.ceil(cardsData.length / cardsPerPage);
-
-    function renderCards() {
+    function carregarBolsasRealtime() {
       const cardContainer = document.getElementById('cardContainer');
-      cardContainer.innerHTML = "";
+      const bolsasRef = collection(db, "bolsas");
 
-      const start = (currentPage - 1) * cardsPerPage;
-      const end = start + cardsPerPage;
-      const paginatedCards = cardsData.slice(start, end);
+      let currentPage = 1;
+      const cardsPerPage = 4;
 
-      paginatedCards.forEach(card => {
-        const cardElement = document.createElement("div");
-        cardElement.classList.add("custom-card");
-        cardElement.innerHTML = `
-          <img src="${card.img}" alt="${card.title}" loading="lazy">
-          <div class="custom-card-body">
-              <h5 class="custom-card-title">${card.title}</h5>
-              <p class="custom-card-text">${card.text}</p>
-               <a href="${card.link || '#'}" target="_blank" class="btn btn-primary btn-sm w-100">
-                <i class="fas fa-external-link-alt"></i> Acessar Bolsa
-              </a>
-          </div>
-        `;
-        cardContainer.appendChild(cardElement);
+      onSnapshot(bolsasRef, (snapshot) => {
+        const cardsData = [];
+        snapshot.forEach(doc => cardsData.push(doc.data()));
+        const totalPages = Math.ceil(cardsData.length / cardsPerPage);
+
+        function renderCards() {
+          cardContainer.innerHTML = "";
+          const start = (currentPage - 1) * cardsPerPage;
+          const end = start + cardsPerPage;
+          const paginatedCards = cardsData.slice(start, end);
+
+          paginatedCards.forEach(card => {
+            const cardElement = document.createElement("div");
+            cardElement.classList.add("custom-card");
+            cardElement.innerHTML = `
+              <img src="${card.img}" alt="${card.title}" loading="lazy">
+              <div class="custom-card-body">
+                <h5 class="custom-card-title">${card.title}</h5>
+                <p class="custom-card-text">${card.text}</p>
+                <a href="${card.link || '#'}" target="_blank" class="btn btn-primary btn-sm w-100">
+                  <i class="fas fa-external-link-alt"></i> Acessar Bolsa
+                </a>
+              </div>
+            `;
+            cardContainer.appendChild(cardElement);
+          });
+
+          document.getElementById('prevPage').disabled = currentPage === 1;
+          document.getElementById('nextPage').disabled = currentPage === totalPages;
+        }
+
+        document.getElementById('prevPage').onclick = () => {
+          if (currentPage > 1) { currentPage--; renderCards(); }
+        };
+        document.getElementById('nextPage').onclick = () => {
+          if (currentPage < totalPages) { currentPage++; renderCards(); }
+        };
+
+        renderCards();
       });
-
-      document.getElementById('prevPage').disabled = currentPage === 1;
-      document.getElementById('nextPage').disabled = currentPage === totalPages;
     }
 
-    document.getElementById('prevPage').addEventListener('click', () => {
-      if (currentPage > 1) {
-        currentPage--;
-        renderCards();
-      }
-    });
-
-    document.getElementById('nextPage').addEventListener('click', () => {
-      if (currentPage < totalPages) {
-        currentPage++;
-        renderCards();
-      }
-    });
-
-    renderCards();
-  }
-
-  carregarBolsas();
-
-  //empregos
-  async function carregarEmpregos() {
-    try {
-      console.log("Buscando empregos...");
+    function carregarEmpregosRealtime() {
       const jobList = document.getElementById("jobList");
-      jobList.innerHTML = "";
+      const empregosRef = collection(db, "empregos");
 
-      const querySnapshot = await getDocs(collection(db, "empregos"));
-      if (querySnapshot.empty) {
-        console.log("Nenhum emprego encontrado.");
-        jobList.innerHTML = "<p>Nenhum emprego disponível.</p>";
-      }
+      onSnapshot(empregosRef, (snapshot) => {
+        jobList.innerHTML = "";
 
-      querySnapshot.forEach((doc) => {
-        const dados = doc.data();
-        console.log("Documento encontrado:", dados);
+        if (snapshot.empty) {
+          jobList.innerHTML = "<p>Nenhum emprego disponível.</p>";
+          return;
+        }
 
-        jobList.innerHTML += `
-          <div class="job-card">
-            <div class="job-title">${dados.titulo}</div>
-            <div class="job-info">
-              <i class="fas fa-tags"></i> ${dados.categoria} <br>
-              <i class="fas fa-map-marker-alt"></i> ${dados.localizacao}
+        snapshot.forEach(doc => {
+          const dados = doc.data();
+          jobList.innerHTML += `
+            <div class="job-card">
+              <div class="job-title">${dados.titulo}</div>
+              <div class="job-info">
+                <i class="fas fa-tags"></i> ${dados.categoria} <br>
+                <i class="fas fa-map-marker-alt"></i> ${dados.localizacao}
+              </div>
+              <a href="${dados.link}" target="_blank" class="job-link">Ver Oferta &rsaquo;</a>
             </div>
-            <a href="${dados.link}" target="_blank" class="job-link">Ver Oferta &rsaquo;</a>
-          </div>
-        `;
+          `;
+        });
       });
-    } catch (e) {
-      console.error("Erro ao carregar empregos:", e);
     }
-  }
 
-  carregarEmpregos();
+    carregarBolsasRealtime();
+    carregarEmpregosRealtime();
 </script>
 
 <script>
