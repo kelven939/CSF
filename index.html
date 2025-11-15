@@ -653,7 +653,8 @@
       
       <form id="form-lista-espera">
         <input type="text" id="nome" placeholder="Nome completo" required>
-        <input type="email" id="email" placeholder="Email" required>
+        <input type="text" id="numero" placeholder="Número de Whatsapp" required>
+        <input type="email" id="email" placeholder="Email">
         <input type="text" id="curso" placeholder="Curso ou área de interesse">
         <button type="submit" class="btn-enviar spinner-border-sm">Enviar</button>
       </form>
@@ -791,10 +792,11 @@ document.addEventListener("DOMContentLoaded", function() {
       e.preventDefault();
 
       const nome = document.getElementById("nome").value.trim();
+      const numero = document.getElementById("numero").value.trim();
       const email = document.getElementById("email").value.trim();
       const curso = document.getElementById("curso").value.trim();
 
-      if (!nome || !email) {
+      if (!nome || !numero) {
         mensagemFeedback.style.color = "red";
         mensagemFeedback.textContent = "Por favor, preencha os campos obrigatórios.";
         return;
@@ -812,6 +814,7 @@ document.addEventListener("DOMContentLoaded", function() {
       try {
         await addDoc(collection(db, "listaespera"), {
           nome,
+          numero,
           email,
           curso,
           data: new Date().toISOString()
