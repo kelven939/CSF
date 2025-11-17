@@ -1650,3 +1650,11 @@ footer p{
   margin-left: 5px;
   vertical-align: text-bottom;
 }
+
+.section-historia {
+	background: #f3f1f1 !important;
+}
+.lerMaisBtn {
+	background: linear-gradient(90deg, #000000, #3533cd, #000000);
+	color: white;
+}
