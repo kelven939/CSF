@@ -922,6 +922,119 @@ footer p{
     transform: scale(1.2);
 }
 
+.redesFooter a {
+  width: 50px;
+  height: 50px;
+  border: 1px solid #eee;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0px 6px;
+  transition: all 0.35s ease-in-out;
+  text-decoration: none;
+  animation: float 4s ease-in-out infinite;
+}
+
+.redesFooter a i {
+  font-size: 2rem;
+  transition: all 0.3s ease-in-out;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-4px); }
+  100% { transform: translateY(0px); }
+}
+
+.redesFooter a[title="Instagram"] i {
+  color: white;
+}
+
+.redesFooter a[title="Instagram"] {
+  background: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+  box-shadow: 0 0 18px #d62976;
+}
+
+.redesFooter a[title="TikTok"] i {
+   color: white;
+}
+
+.redesFooter a[title="Whatsapp"] i { color: white; }
+.redesFooter a[title="Facebook"] i { color: white; }
+.redesFooter a[title="Youtube"] i { color: white; }
+.redesFooter a[title="LinkedIn"] i { color: white; }
+
+@keyframes neonPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.12); }
+  100% { transform: scale(1); }
+}
+
+.redesFooter a[title="Instagram"]:hover {
+  background: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+  box-shadow: 0 0 18px #d62976;
+  animation: neonPulse 0.6s ease-in-out;
+}
+.redesFooter a[title="Instagram"]:hover i {
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+}
+.redesFooter a[title="TikTok"] {
+  background: linear-gradient(45deg, #25F4EE, #FE2C55, #000);
+  box-shadow: 0 0 18px #FE2C55;
+}
+.redesFooter a[title="TikTok"]:hover {
+  background: linear-gradient(45deg, #25F4EE, #FE2C55, #000);
+  box-shadow: 0 0 18px #FE2C55;
+  animation: neonPulse 0.6s ease-in-out;
+}
+.redesFooter a[title="TikTok"]:hover i {
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+}
+
+.redesFooter a[title="Whatsapp"] {
+  background-color: #25D366;
+  box-shadow: 0 0 15px #25D366;
+}
+.redesFooter a[title="Whatsapp"]:hover {
+  background-color: #25D366;
+  box-shadow: 0 0 15px #25D366;
+  animation: neonPulse 0.6s ease-in-out;
+}
+.redesFooter a[title="Facebook"] {
+  background-color: #1877F2;
+  box-shadow: 0 0 15px #1877F2;
+}
+.redesFooter a[title="Facebook"]:hover {
+  background-color: #1877F2;
+  box-shadow: 0 0 15px #1877F2;
+  animation: neonPulse 0.6s ease-in-out;
+}
+.redesFooter a[title="Youtube"] {
+  background-color: #FF0000;
+  box-shadow: 0 0 15px #FF0000;
+}
+.redesFooter a[title="Youtube"]:hover {
+  background-color: #FF0000;
+  box-shadow: 0 0 15px #FF0000;
+  animation: neonPulse 0.6s ease-in-out;
+}
+.redesFooter a[title="LinkedIn"] {
+  background-color: #0A66C2;
+  box-shadow: 0 0 15px #0A66C2;
+}
+.redesFooter a[title="LinkedIn"]:hover {
+  background-color: #0A66C2;
+  box-shadow: 0 0 15px #0A66C2;
+  animation: neonPulse 0.6s ease-in-out;
+}
+
+.redesFooter a:hover i {
+  color: #fff;
+}
+
 @media (max-width: 768px) {
 	.redesFooter a i{
 	color: #eee;
