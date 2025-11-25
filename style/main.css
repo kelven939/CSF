@@ -301,6 +301,7 @@ p {
   font-size: 16px;
   line-height: 1.6;
   color: #f2f2f2;
+  text-align: justify;
 }
 
 /* Redes sociais */
@@ -324,21 +325,37 @@ p {
 
 .circuloRedes:hover {
   transform: scale(1.15);
-  background: linear-gradient(90deg, #000000, #2421b8, #000000);
-  color: white !important;
-  box-shadow: 0 0 15px #2421b8;
+  box-shadow: 0 0 15px rgba(255,255,255,0.3);
 }
 
 .social-icon {
 	margin-left: 10px;
   color: #fff !important;
   font-size: 2.4rem !important;
-  transition: transform 0.3s ease, color 0.3s ease;
+  transition: 0.3s ease;
 }
 
-.social-icon:hover {
-  color: #000;
-  transform: scale(1.2);
+.circuloRedes:nth-child(1) i {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.circuloRedes:nth-child(2) i {
+  color: #25D366 !important;
+}
+
+.circuloRedes:nth-child(3) i {
+  color: #1877F2 !important;
+}
+
+.circuloRedes:nth-child(4) i {
+  color: #FF0000 !important;
+}
+
+.circuloRedes:hover i {
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
 }
 
 .btn-int {
@@ -611,7 +628,7 @@ p {
 		max-width: 700px;
 		margin: 0 auto 20px;
 		line-height: 1.6;
-		text-align: left;
+		text-align: justify;
 	}
 
 	/* Bloco de Destaque */
@@ -628,7 +645,7 @@ p {
 
 	.caixa-destaque::before {
 		content: "“";
-		font-size: 60px;
+		font-size: 40px;
 		color: linear-gradient(90deg, #000000, #3533cd, #000000);
 		position: absolute;
 		top: -10px;
@@ -734,6 +751,7 @@ p {
 }
 .faq-text {
 	color: white;
+	text-align: center;
 }
 .faq-item {
 	border-bottom: 1px solid #ddd;
@@ -1012,77 +1030,126 @@ footer p{
 		transition: all .4s ease !important;
 	}*/
 
-	/* Quem Somos */
-	.section-quem-somos {
-		font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-		margin-top: 55px;
-		padding: 10px;
-		background: linear-gradient(90deg, #000000, #3533cd, #000000);
-		padding-bottom: 25px;
-	}
-	.container-contents {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		flex-direction: row;
-		padding: 5px;
-		color: #eee;
-		border: 0px solid red;
-	}
-	.quem-somos {
-		display: flex;
-  		justify-content: center;
- 		align-items: center;
-  		flex-direction: column;
-  		border: 2px solid transparent;
- 		width: 230px;
-  		height: 260px;
-  		padding: 15px;
-  		margin-right: 145px;
-  		border-radius: 25px;
-  		background: linear-gradient(white, white) padding-box,
-    	linear-gradient(90deg, #000000, #3533cd, #000000) border-box;
-	}
-	.fa-users {
-		 font-size: 4em;
-      background: linear-gradient(90deg, #000000, #3533cd, #000000);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      filter: drop-shadow(0 0 4px rgba(0,0,0,0.3));
-	}
-	.quem-somos h1 {
-		font-size: 2.5em;
-  		font-weight: bold;
-  		text-align: center;
-  		background: linear-gradient(90deg, #000000, #3533cd, #000000);
-  		-webkit-background-clip: text;
-  		-webkit-text-fill-color: transparent;
-	}
-	.bar-div {
-		width: 220px;
-		height: 3px;
-		background-color: #eee;
-		display: block;
-		border-radius: 5px;
-		transform: rotate(180deg);
-		margin-left: -220px;
-		margin-top: 30px;
-		border-radius: 25px;
-		display: none;
-	}
-	.info-quem-somos {
-		border: 0px solid red;
-		width: 885px;
-		padding: 10px;
-		text-align: justify;
-		margin-left: -85px;
-	}
-	.info-quem-somos h1 {
-		font-size: 32px;
-	}
-	.info-quem-somos p {
-		font-size: 20px;
-	}
+/* --- Quem Somos --- */
+.quem-somos-novo {
+  width: 100%;
+  padding: 70px 20px;
+  background: linear-gradient(90deg, #000000, #3533cd, #000000);
+  color: #fff;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.qs-container {
+  max-width: 1250px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+.qs-left {
+  flex: 1;
+  min-width: 300px;
+}
+
+.qs-title {
+  font-size: 38px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.qs-line {
+  width: 75px;
+  height: 6px;
+  border-radius: 10px;
+  background: #fff;
+  margin-bottom: 25px;
+}
+
+.qs-text {
+  font-size: 18px;
+  line-height: 1.7;
+  margin-bottom: 18px;
+  text-align: justify;
+}
+
+.qs-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  min-width: 300px;
+}
+
+.qs-card {
+  width: 330px;
+  padding: 35px 25px;
+  border-radius: 25px;
+
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  text-align: center;
+
+  box-shadow: 0px 10px 30px rgba(0,0,0,0.3);
+
+  transition: 0.3s;
+}
+
+.qs-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 15px 35px rgba(0,0,0,0.35);
+}
+
+.qs-card i {
+  font-size: 4rem;
+  margin-bottom: 10px;
+  background: linear-gradient(90deg, #000000, #3533cd, #000000);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.qs-card h3 {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 10px 0 5px 0;
+}
+
+.qs-card p {
+  font-size: 16px;
+  opacity: 0.8;
+}
+
+@media (max-width: 900px) {
+  .qs-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .qs-left {
+    text-align: center;
+  }
+
+  .qs-line {
+    margin: 10px auto 25px auto;
+  }
+}
+
+@media (max-width: 500px) {
+  .qs-title {
+    font-size: 28px;
+  }
+
+  .qs-text {
+    font-size: 16px;
+  }
+
+  .qs-card {
+    width: 90%;
+  }
+}
 
 	/* Seccao de Nossos Servicos */
 	.section-nossos-servicos {
@@ -1093,6 +1160,7 @@ footer p{
 		font-size: 32px;
 		margin-bottom: 20px;
 		color: #231f20;
+		text-align: center;
 	}
 
 	.service-paragraph {
