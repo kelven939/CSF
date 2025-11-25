@@ -213,6 +213,10 @@ p {
 	text-decoration: none;
 }
 
+.btn {
+	background: linear-gradient(90deg, #000000, #3533cd, #000000) !important;
+}
+
 /* Paginação */
 .pagination {
 	display: flex;
@@ -1377,13 +1381,23 @@ footer p{
 	}
 
 	.job-info i {
-		color: #0099cc;
+		background: linear-gradient(90deg, #000000, #3533cd, #000000);
+  		background-size: 200% auto;
+  		-webkit-background-clip: text;
+  		-webkit-text-fill-color: transparent;
+  		font-weight: bold;
+  		animation: gradientMove 3s linear infinite;
 		margin-right: 5px;
 	}
 
 	.job-link {
 		font-size: 1.3rem;
-		color: #0099cc;
+		background: linear-gradient(90deg, #000000, #3533cd, #000000);
+  		background-size: 200% auto;
+  		-webkit-background-clip: text;
+  		-webkit-text-fill-color: transparent;
+  		font-weight: bold;
+  		animation: gradientMove 3s linear infinite;
 		font-weight: bold;
 		text-decoration: none;
 		display: inline-block;
