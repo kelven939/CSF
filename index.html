@@ -680,6 +680,13 @@
     </div>
   </section>
 
+  <section id="mentores" class="secMentores">
+    <div class="container">
+        <h2 class="tituloMentores gradient-text">Nossos Mentores</h2>
+        <div id="mentorContainer"></div>
+    </div>
+</section>
+
   <!--<section class="section-jobs" id="sectionJobs">
   <div class="container">
     <h1 class="title-jobs gradient-text">Empregos em Destaque</h1>
@@ -1009,8 +1016,32 @@ document.addEventListener("DOMContentLoaded", function() {
       });
     }
 
+    function carregarMentor() {
+    const mentorContainer = document.getElementById("mentorContainer");
+    if (!mentorContainer) return;
+
+    const mentorRef = collection(db, "mentores");
+
+    onSnapshot(mentorRef, (snapshot) => {
+      mentorContainer.innerHTML = "";
+
+      snapshot.forEach(doc => {
+        const dados = doc.data();
+
+        mentorContainer.innerHTML += `
+          <div class="mentor-box">
+              <img src="${dados.imagem}" class="mentor-foto" alt="Foto do Mentor">
+              <h2 class="mentor-nome">${dados.nome}</h2>
+              <p class="mentor-descricao">${dados.descricao}</p>
+          </div>
+        `;
+      });
+    });
+  }
+
     carregarBolsasRealtime();
     carregarEmpregosRealtime();
+    carregarMentor();
 </script>
 
 <script>
