@@ -898,33 +898,9 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 </script>
 
-  <!-- Scripts
-  <script type="module">
-    // Import the functions you need from the SDKs you need
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-app.js";
-    import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-analytics.js";
-    // TODO: Add SDKs for Firebase products that you want to use
-    // https://firebase.google.com/docs/web/setup#available-libraries
-  
-    // Your web app's Firebase configuration
-    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-    const firebaseConfig = {
-      apiKey: "AIzaSyDoQ9oQlKAJuPZ8p_PxrWMAgkbDqAYjVVc",
-      authDomain: "conexao-sem-fronteira.firebaseapp.com",
-      projectId: "conexao-sem-fronteira",
-      storageBucket: "conexao-sem-fronteira.firebasestorage.app",
-      messagingSenderId: "164792165169",
-      appId: "1:164792165169:web:51cc74fc8bbc4ef5ac4610",
-      measurementId: "G-C5W5PT5H8Y"
-    };
-  
-    // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
-    const analytics = getAnalytics(app);
-  </script> -->
-
 <script type="module">
   import { initializeApp } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-analytics.js";
   import { getFirestore, collection, getDocs, addDoc, onSnapshot } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore.js";
 
   const firebaseConfig = {
@@ -938,6 +914,7 @@ document.addEventListener("DOMContentLoaded", function() {
   };
 
   const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
   window.db = getFirestore(app);
 
     const form = document.getElementById("form-lista-espera");
