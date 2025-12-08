@@ -2030,12 +2030,25 @@ footer p{
 }
 
 #mentorContainer {
-    max-width: 900px;
+    max-width: 1100px;
     margin: 60px auto;
     padding: 20px;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.mentor-box {
+    flex: 1 1 calc(50% - 30px);
+    max-width: calc(50% - 30px);
+}
+
+@media (max-width: 768px) {
+    .mentor-box {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
 }
 
 .tituloMentores {
