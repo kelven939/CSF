@@ -15,12 +15,12 @@ function copyText(text) {
     });
   }
 
-  generateQR('mpesaInner', '258841441993');
-  generateQR('emolaInner', '258864214697');
-  generateQR('bankInner', '000123456789');
-  generateQR('pixInner', 'doacoes@ifg.org');
+  generateQR('mpesaInner', '878530103');
+  generateQR('emolaInner', '848510103');
+  //generateQR('bankInner', '000123456789');
+  generateQR('pixInner', 'equipe.institutoifg@gmail.com');
   generateQR('paypalInner', 'https://paypal.me/institutoglobal');
-  generateQR('westernInner', '+258841441993');
+  generateQR('westernInner', '+5516993307422');
 
   // Abas
   const tabButtons = document.querySelectorAll('.tab-btn');
