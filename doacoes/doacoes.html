@@ -5,43 +5,36 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="IFG" />
 <meta name="theme-color" content="#3533cd" />
-  <!-- Bootstrap CSS -->
+<title>Doações - IFG</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<!-- Bootstrap CSS -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- CSS personalizado -->
 <link rel="stylesheet" href="./doacoes.css">
 <link rel="shortcut icon" href="../images/logo/logoIFG.png" type="image/x-icon">
-<title>Doações-IFG</title>
 </head>
 <body>
 
 <div class="donation-section">
 
-<section class="homeSabermais">
-  <div class="container buttons-container">
-    <a href="../index.html" class="action-btn">Voltar à Página principal</a>
-    <button class="action-btn" id="openModal">Saber mais da Campanha de Solidariedade</button>
-  </div>
-</section>
-
-<!-- Modal -->
-<div id="solidarityModal" class="modal">
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <h2>Campanha de Solidariedade - IFG</h2>
-    <p>
-      A Campanha de Solidariedade do Instituto de Formação Global-IFG tem como objetivo apoiar crianças vulneráveis no mundo,
-      garantindo acesso à educação. Cada doação transforma vidas e fortalece o futuro da nossa comunidade.
-    </p>
-    <p><strong>Como contribuir:</strong> Escolha um método de doação na seção abaixo e siga as instruções para fazer sua contribuição com segurança.</p>
-  </div>
-</div>
+  <section class="homeSabermais">
+    <div class="container buttons-container">
+      <a href="../index.html" class="action-btn">
+        <i class="fas fa-arrow-left"></i> Voltar à Página principal
+      </a>
+      <button class="action-btn" id="openModal">
+        <i class="fas fa-info-circle"></i> Saber mais da Campanha de Solidariedade
+    </button>
+  </section>
 
   <h2 class="gradient-text">Campanha de Solidariedade</h2>
-  <p>Estamos empenhados em ajudar <span class="gradient-tex">crianças vulneráveis ao redor do mundo</span>. Sua doação contribui para fornecer acesso à <strong>educação</strong>. Junte-se a nós e transforme vidas!</p>
+  <p>Estamos empenhados em ajudar <span class="gradient-text">crianças vulneráveis ao redor do mundo</span>. Sua doação contribui para fornecer acesso à <strong>educação</strong>. Junte-se a nós e transforme vidas!</p>
 
   <div class="tabs">
     <button class="tab-btn active" data-tab="mpesaTab">M-pesa</button>
     <button class="tab-btn" data-tab="emolaTab">E-mola</button>
-    <!--<button class="tab-btn" data-tab="bankTab">Banco</button>-->
     <button class="tab-btn" data-tab="pixTab">Pix</button>
     <button class="tab-btn" data-tab="paypalTab">PayPal</button>
     <button class="tab-btn" data-tab="westernTab">Western Union</button>
@@ -54,10 +47,10 @@
       <div class="qr-container"><div class="qr-inner" id="mpesaInner"></div></div>
       <div class="account-info">
         <p><strong>Titular:</strong> Muteruco Augusto Materusse</p>
-        <p><strong>Número:</strong> 258878530103</p>
+        <p><strong>Número:</strong> 258848510103</p>
         <p><strong>Operadora:</strong> Vodacom</p>
       </div>
-      <button class="copy-btn" onclick="copyText('878530103')">Copiar Número</button>
+      <button class="copy-btn" onclick="copyText('848510103')">Copiar Número</button>
     </div>
   </div>
 
@@ -68,28 +61,12 @@
       <div class="qr-container"><div class="qr-inner" id="emolaInner"></div></div>
       <div class="account-info">
         <p><strong>Titular:</strong> Muteruco Augusto Materusse</p>
-        <p><strong>Número:</strong> 258848510103</p>
+        <p><strong>Número:</strong> 258878530103</p>
         <p><strong>Operadora:</strong> Movitel</p>
       </div>
-      <button class="copy-btn" onclick="copyText('848510103')">Copiar Número</button>
+      <button class="copy-btn" onclick="copyText('878530103')">Copiar Número</button>
     </div>
   </div>
-
-  <!-- BANCO -->
- <!--<div class="tab-content" id="bankTab">
-    <div class="donation-card">
-      <h3>Banco</h3>
-      <div class="qr-container"><div class="qr-inner" id="bankInner"></div></div>
-      <div class="account-info">
-        <p><strong>Banco:</strong> BIM</p>
-        <p><strong>Titular:</strong> Instituto de Formação Global IFG-IFG</p>
-        <p><strong>IBAN:</strong> MZ59000000000000000012345</p>
-        <p><strong>SWIFT/BIC:</strong> BDMZMZMX</p>
-        <p><strong>Conta:</strong> 000123456789</p>
-      </div>
-      <button class="copy-btn" onclick="copyText('000123456789')">Copiar Conta</button>
-    </div>
-  </div>-->
 
   <!-- PIX -->
   <div class="tab-content" id="pixTab">
@@ -129,11 +106,67 @@
       <button class="copy-btn" onclick="copyText('+5516993307422')">Copiar Número</button>
     </div>
   </div>
+
 </div>
 
 <div id="toast" class="toast"></div>
 
+<!-- Modal do Projeto Social IFG -->
+<div id="solidarityModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Campanha de Solidariedade - IFG</h2>
+    <p>
+      A Campanha de Solidariedade do Instituto de Formação Global-IFG tem como objetivo apoiar crianças vulneráveis no mundo,
+      garantindo acesso à educação. Cada doação transforma vidas e fortalece o futuro da nossa comunidade.
+    </p>
+    <p><strong>Como contribuir:</strong> Escolha um método de doação na seção acima e siga as instruções para fazer sua contribuição com segurança.</p>
+
+    <hr>
+
+    <h3>Projeto Social IFG - Transformar Vidas pela Educação</h3>
+    <img src="../images/pji.jpeg" alt="Projeto Social IFG">
+    <p>
+      O Projeto Social IFG nasce com um propósito claro: apoiar crianças, jovens e adultos que vivem em situação de vulnerabilidade escolar, oferecendo oportunidades reais de aprendizagem, crescimento e mobilidade acadêmica.
+    </p>
+    <p>
+      Em um mundo onde inúmeras organizações concentram seus esforços principalmente na oferta de alimentos, o IFG reconheceu que a verdadeira transformação começa pela educação. Dar um prato de comida hoje alivia a fome, mas dar acesso à educação corta o mal pela raiz.
+    </p>
+
+    <h4>Uma Visão Baseada em Impacto Duradouro</h4>
+    <ul>
+      <li>Fornecimento de materiais pedagógicos e acadêmicos</li>
+      <li>Mentorias e orientação educacional</li>
+      <li>Apoio logístico e financeiro para viagens internacionais</li>
+      <li>Seleção de beneficiários com ótimo rendimento acadêmico</li>
+    </ul>
+
+    <h4>Público-Alvo</h4>
+    <p>Crianças, jovens e adultos em situação de vulnerabilidade escolar, mas com comprometimento nos estudos e potencial social.</p>
+
+    <h4>Atuação Internacional</h4>
+    <ul>
+      <li>Moçambique</li>
+      <li>Angola</li>
+      <li>Zimbábue</li>
+      <li>São Tomé e Príncipe</li>
+      <li>Brasil</li>
+    </ul>
+    <ol>
+      <li>Primeira ação: Angola</li>
+      <li>Segunda ação: Moçambique</li>
+      <li>Terceira ação: Brasil</li>
+    </ol>
+
+    <h4>Uma História que Começou em 2020</h4>
+    <p>
+      Este projeto surgiu em dezembro de 2020, com um pequeno Natal solidário para pessoas em situação de rua. Hoje, o Projeto Social IFG é o braço social oficial do Instituto.
+    </p>
+  </div>
+</div>
+
 <script src="https://cdn.jsdelivr.net/npm/qrcodejs2@0.0.2/qrcode.min.js"></script>
 <script src="./doacoes.js"></script>
+
 </body>
 </html>
