@@ -3,172 +3,230 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="IFG" />
-<meta name="theme-color" content="#3533cd" />
-<title>Doações - IFG</title>
+<title>IFG Solidariedade</title>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<!-- Bootstrap CSS -->
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+<!-- Bootstrap -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-<!-- CSS personalizado -->
+<!-- FontAwesome -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+<!-- QRCode -->
+<script src="https://cdn.jsdelivr.net/npm/qrcodejs2@0.0.2/qrcode.min.js"></script>
 <link rel="stylesheet" href="./doacoes.css">
-<link rel="shortcut icon" href="../images/logo/logoIFG.png" type="image/x-icon">
+
 </head>
 <body>
 
-<div class="donation-section">
+<!--Header-->
+	<header class="header" id="headerId">
+		<nav class="navBar min" role="navigation" aria-label="Navegação principal">
+			<a href="./index.html" class="logo" title="Voltar para a página inicial" aria-label="Página inicial">
+				<div class="img-logo">
+					<img src="../images/logo/logoIFG.png" class="logo-img-academy" alt="Logo IFG Instituto de Formação Global" loading="lazy">
+				</div>
+			</a>
 
-  <section class="homeSabermais">
-    <div class="container buttons-container">
-      <a href="../index.html" class="action-btn">
-        <i class="fas fa-arrow-left"></i> Voltar à Página principal
-      </a>
-      <button class="action-btn" id="openModal">
-        <i class="fas fa-info-circle"></i> Saber mais da Campanha de Solidariedade
-    </button>
-  </section>
+			<ul class="nav-menu list-menu-class">
+				<li class="nav-item">
+					<a href="../index.html" accesskey="h" title="Ir para a Página Inicial">
+            Home
+          </a>
+				</li>
+          <li class="nav-item">
+					<a href="#sobre" class="nav-item nav-link destaqueMenu" title="Quem Somos">
+						Sobre
+					</a>
+				</li>
+          <li class="nav-item">
+					<a href="#projeto" class="nav-item nav-link destaqueMenu" title="Equipe IFG">
+						Projeto
+					</a>
+				</li>
+          <li class="nav-item">
+					<a href="#doacoes" class="nav-item nav-link destaqueMenu" title="Nossos serviços">
+						Doações
+					</a>
+				</li>
+				<li class="nav-item">
+					<a href="#voluntario" class="nav-item nav-link destaqueMenu" title="Eventos">
+						Voluntariado
+					</a>
+				</li>
+        <li class="nav-item">
+					<a href="#footer" class="nav-item nav-link destaqueMenu" title="Contactos">
+            Contacte-nos
+					</a>
+				</li>
+			</ul>
+				<div class="humburguer">
+					<span class="bar"></span>
+					<span class="bar"></span>
+					<span class="bar"></span>
+				</div>
+		</nav>
+	</header>
 
-  <h2 class="gradient-text">Campanha de Solidariedade</h2>
-  <p>Estamos empenhados em ajudar <span class="gradient-text">crianças vulneráveis ao redor do mundo</span>. Sua doação contribui para fornecer acesso à <strong>educação</strong>. Junte-se a nós e transforme vidas!</p>
-
-  <div class="tabs">
-    <button class="tab-btn active" data-tab="mpesaTab">M-pesa</button>
-    <button class="tab-btn" data-tab="emolaTab">E-mola</button>
-    <button class="tab-btn" data-tab="pixTab">Pix</button>
-    <button class="tab-btn" data-tab="paypalTab">PayPal</button>
-    <button class="tab-btn" data-tab="westernTab">Western Union</button>
+<section class="hero">
+  <div class="hero-content">
+    <h1>Projeto Social IFG</h1>
+    <p>Levando educação de qualidade, esperança renovada e transformação social a crianças em diversas partes do mundo.</p>
+    <a href="#doacoes" class="btn-cta">Contribua Agora</a>
   </div>
+</section>
 
-  <!-- M-PESA -->
-  <div class="tab-content active" id="mpesaTab">
-    <div class="donation-card">
-      <h3>M-pesa</h3>
-      <div class="qr-container"><div class="qr-inner" id="mpesaInner"></div></div>
-      <div class="account-info">
-        <p><strong>Titular:</strong> Muteruco Augusto Materusse</p>
-        <p><strong>Número:</strong> 258848510103</p>
-        <p><strong>Operadora:</strong> Vodacom</p>
-      </div>
-      <button class="copy-btn" onclick="copyText('848510103')">Copiar Número</button>
+<!-- Sobre -->
+<section id="sobre" class="section fade-in">
+  <div class="container">
+    <h2>Sobre a Campanha</h2>
+    <div class="cards">
+      <div class="card"><i class="fas fa-heart"></i><h3>Missão</h3><p>Promover educação de qualidade e acessível, conectando pessoas a oportunidades globais de estudo, trabalho e desenvolvimento pessoal, contribuindo para a formação de cidadãos preparados para transformar suas comunidades.</p></div>
+      <div class="card"><i class="fas fa-hand-holding-heart"></i><h3>Visão</h3><p>Ser uma referência internacional em formação educacional e profissional, reconhecida pela inovação, excelência acadêmica e compromisso social, tornando-se um elo entre talentos locais e oportunidades globais.</p></div>
+      <div class="card"><i class="fas fa-globe"></i><h3>Valores</h3><p>Educação transformadora, Acessibilidade, Diversidade, Responsabilidade social, Excelência, Colaboração, Inovação, Inclusão e Conexão global.</p></div>
     </div>
   </div>
+</section>
 
-  <!-- E-MOLA -->
-  <div class="tab-content" id="emolaTab">
-    <div class="donation-card">
-      <h3>E-mola</h3>
-      <div class="qr-container"><div class="qr-inner" id="emolaInner"></div></div>
-      <div class="account-info">
-        <p><strong>Titular:</strong> Muteruco Augusto Materusse</p>
-        <p><strong>Número:</strong> 258878530103</p>
-        <p><strong>Operadora:</strong> Movitel</p>
+<!-- Projeto -->
+<section id="projeto" class="section fade-in" style="background:#f9f9f9;">
+  <div class="container">
+    <h2>Projeto Social IFG</h2>
+    <div class="cards">
+    <div class="card">
+      <i class="fas fa-lightbulb"></i>
+      <h3>Propósito Claro</h3>
+      <p>O Projeto Social IFG nasce com um propósito claro: apoiar crianças, jovens e adultos que vivem em situação de vulnerabilidade escolar, oferecendo oportunidades reais de aprendizagem, crescimento e mobilidade acadêmica.</p>
       </div>
-      <button class="copy-btn" onclick="copyText('878530103')">Copiar Número</button>
+      <div class="card">
+      <i class="fas fa-seedling"></i>
+      <h3>Educação Transformadora</h3>
+      <p>Em um mundo onde inúmeras organizações concentram seus esforços principalmente na oferta de alimentos, o IFG reconheceu que a verdadeira transformação começa pela educação. Dar um prato de comida hoje alivia a fome, mas dar acesso à educação corta o mal pela raiz.</p>
+      </div>
+      <div class="card"><i class="fas fa-users"></i><h3>Transformar Vidas</h3><p>Apoiar crianças, jovens e adultos em situação de vulnerabilidade escolar com oportunidades reais de aprendizagem, crescimento e mobilidade acadêmica.</p></div>
+      <div class="card"><i class="fas fa-hand-holding"></i><h3>Impacto Duradouro</h3><ul><li>Materiais pedagógicos e acadêmicos</li><li>Mentorias e orientação educacional</li><li>Apoio logístico e financeiro para viagens internacionais</li><li>Seleção de beneficiários com ótimo rendimento acadêmico</li></ul></div>
+      <div class="card"><i class="fas fa-map-marker-alt"></i><h3>Público-Alvo & Alcance</h3><p>Crianças, jovens e adultos em vulnerabilidade escolar, mas com comprometimento nos estudos e potencial social.</p><p><strong>Países:</strong> Moçambique • Angola • Zimbábue • São Tomé e Príncipe • Brasil</p></div>
     </div>
   </div>
+</section>
 
-  <!-- PIX -->
-  <div class="tab-content" id="pixTab">
-    <div class="donation-card">
-      <h3>Pix</h3>
-      <div class="qr-container"><div class="qr-inner" id="pixInner"></div></div>
-      <div class="account-info">
-        <p><strong>Chave Pix:</strong> equipe.institutoifg@gmail.com</p>
-      </div>
-      <button class="copy-btn" onclick="copyText('equipe.institutoifg@gmail.com')">Copiar Chave</button>
-    </div>
-  </div>
-
-  <!-- PAYPAL -->
-  <div class="tab-content" id="paypalTab">
-    <div class="donation-card">
-      <h3>PayPal</h3>
-      <div class="qr-container"><div class="qr-inner" id="paypalInner"></div></div>
-      <div class="account-info">
-        <p><strong>Conta PayPal:</strong> equipe.institutoifg@gmail.com</p>
-      </div>
-      <button class="copy-btn" onclick="copyText('equipe.institutoifg@gmail.com')">Copiar Conta</button>
-    </div>
-  </div>
-
-  <!-- WESTERN UNION -->
-  <div class="tab-content" id="westernTab">
-    <div class="donation-card">
-      <h3>Western Union</h3>
-      <div class="qr-container"><div class="qr-inner" id="westernInner"></div></div>
-      <div class="account-info">
-        <p><strong>Beneficiário:</strong> Muteruco Augusto Materusse</p>
-        <p><strong>País:</strong> Brasil</p>
-        <p><strong>Telefone:</strong> +5516993307422</p>
-        <p><strong>Finalidade:</strong> Doações</p>
-      </div>
-      <button class="copy-btn" onclick="copyText('+5516993307422')">Copiar Número</button>
-    </div>
-  </div>
-
-</div>
-
-<div id="toast" class="toast"></div>
-
-<div id="solidarityModal" class="modal">
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <h2>Campanha de Solidariedade - IFG</h2>
-    <p>
-      A Campanha de Solidariedade do Instituto de Formação Global-IFG tem como objetivo apoiar crianças vulneráveis no mundo,
-      garantindo acesso à educação. Cada doação transforma vidas e fortalece o futuro da nossa comunidade.
-    </p>
-    <p><strong>Como contribuir:</strong> Escolha um método de doação na seção acima e siga as instruções para fazer sua contribuição com segurança.</p>
-
-    <hr>
-
-    <h3>Projeto Social IFG - Transformar Vidas pela Educação</h3>
-    <img src="../images/pji.jpeg" loading="lazy" alt="Projeto Social IFG">
-    <img src="../images/pji2.jpeg" loading="lazy" alt="Projeto Social IFG">
-    <img src="../images/pji3.jpeg" loading="lazy" alt="Projeto Social IFG">
-    <p>
-      O Projeto Social IFG nasce com um propósito claro: apoiar crianças, jovens e adultos que vivem em situação de vulnerabilidade escolar, oferecendo oportunidades reais de aprendizagem, crescimento e mobilidade acadêmica.
-    </p>
-    <p>
-      Em um mundo onde inúmeras organizações concentram seus esforços principalmente na oferta de alimentos, o IFG reconheceu que a verdadeira transformação começa pela educação. Dar um prato de comida hoje alivia a fome, mas dar acesso à educação corta o mal pela raiz.
+<section id="criancas-ajudadas" class="section fade-in" style="background:#fff;">
+  <div class="container">
+    <h2 class="text-center mb-4">Histórias de Impacto</h2>
+    <p class="text-center mb-5">
+      Cada imagem representa uma vida impactada pelo Projeto Social.
     </p>
 
-    <h4>Uma Visão Baseada em Impacto Duradouro</h4>
-    <ul>
-      <li>Fornecimento de materiais pedagógicos e acadêmicos</li>
-      <li>Mentorias e orientação educacional</li>
-      <li>Apoio logístico e financeiro para viagens internacionais</li>
-      <li>Seleção de beneficiários com ótimo rendimento acadêmico</li>
-    </ul>
+    <div class="galeria-ajuda">
 
-    <h4>Público-Alvo</h4>
-    <p>Crianças, jovens e adultos em situação de vulnerabilidade escolar, mas com comprometimento nos estudos e potencial social.</p>
+      <div class="galeria-item"
+           onclick="abrirLightbox('../images/pji.jpeg', 'Moçambique')">
+        <img src="../images/pji.jpeg" alt="beneficiado pelo IFG">
+        <div class="legenda">
+          <h4>Moçambique</h4>
+          <button type="button" class="btn-historia">Ver história completa</button>
+        </div>
+      </div>
 
-    <h4>Atuação Internacional</h4>
-    <ul>
-      <li>Moçambique</li>
-      <li>Angola</li>
-      <li>Zimbábue</li>
-      <li>São Tomé e Príncipe</li>
-      <li>Brasil</li>
-    </ul>
-    <ol>
-      <li>Primeira ação: Angola</li>
-      <li>Segunda ação: Moçambique</li>
-      <li>Terceira ação: Brasil</li>
-    </ol>
+      <div class="galeria-item"
+           onclick="abrirLightbox('../images/pji2.jpeg', 'Brasil')">
+        <img src="../images/pji2.jpeg" alt="beneficiado pelo IFG">
+        <div class="legenda">
+          <h4>Moçambique</h4>
+          <button type="button" class="btn-historia">Ver história completa</button>
+        </div>
+      </div>
 
-    <h4>Uma História que Começou em 2020</h4>
-    <p>
-      Este projeto surgiu em dezembro de 2020, com um pequeno Natal solidário para pessoas em situação de rua. Hoje, o Projeto Social IFG é o braço social oficial do Instituto.
-    </p>
+      <div class="galeria-item"
+           onclick="abrirLightbox('../images/pji3.jpeg', 'Angola')">
+        <img src="../images/pji3.jpeg" alt="beneficiado pelo IFG">
+        <div class="legenda">
+          <h4>Angola</h4>
+          <button type="button" class="btn-historia">Ver história completa</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div id="lightbox" class="lightbox">
+  <div class="lightbox-content">
+    <span class="fechar" onclick="fecharLightbox()">&times;</span>
+    <img id="lightbox-img" src="" alt="">
+    <h3 id="lightbox-titulo"></h3>
+    <p id="lightbox-texto"></p>
   </div>
 </div>
 
-<!-- Scripts -->
-<script src="https://cdn.jsdelivr.net/npm/qrcodejs2@0.0.2/qrcode.min.js"></script>
+<!-- Doações -->
+<section id="doacoes" class="section fade-in">
+  <div class="container">
+    <h2>Formas de Doação</h2>
+    <div class="cards">
+      <div class="card"><i class="fas fa-mobile-alt"></i><h3>M-Pesa</h3><div id="qrMpesa" class="qr-box"></div><p>Número: 848510103</p><p>Titular: Muteruco Augusto Materusse</p><p>Operadora: Vodacom</p><button class="btn-copy" data-text="848510103">Copiar</button></div>
+      <div class="card"><i class="fas fa-wallet"></i><h3>E-Mola</h3><div id="qrEmola" class="qr-box"></div><p>Número: 878530103</p><p>Titular: Muteruco Augusto Materusse</p><p>Operadora: Movitel</p><button class="btn-copy" data-text="878530103">Copiar</button></div>
+      <div class="card"><i class="fas fa-qrcode"></i><h3>Pix / PayPal</h3><div id="qrPix" class="qr-box"></div><p>Email: equipe.institutoifg@gmail.com</p><button class="btn-copy" data-text="equipe.institutoifg@gmail.com">Copiar</button></div>
+      <div class="card"><i class="fas fa-globe-americas"></i><h3>Western Union</h3><div id="qrWestern" class="qr-box"></div><p>Beneficiário: Muteruco Augusto Materusse</p><p>País: Brasil</p><p>Telefone: +5516993307422</p><p>Finalidade: Doações</p><button class="btn-copy" data-text="+5516993307422">Copiar</button></div>
+    </div>
+  </div>
+</section>
+
+<!-- Voluntariado -->
+<section id="voluntario" class="section fade-in" style="background:#f9f9f9;">
+  <div class="container">
+    <h2>Seja um Voluntário</h2>
+    <form onsubmit="enviarVoluntario(event)">
+      <input type="text" placeholder="Nome completo" required>
+      <input type="email" placeholder="Email" required>
+      <input type="text" placeholder="Cidade / País" required>
+      <textarea rows="4" placeholder="Como deseja ajudar?" required></textarea>
+      <button type="submit" class="btn-cta">Enviar Candidatura</button>
+    </form>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer id="footer">
+  <p>&copy; 2025 IFG - Todos os direitos reservados.</p>
+  
+  <div class="social-icons">
+    <a href="https://www.facebook.com/share/16oE5MdGrr/?mibextid=wwXIfr" target="_blank"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://www.instagram.com/institutoifg" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://whatsapp.com/channel/0029VbAoqEpFi8xlluR3e60V target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://www.tiktok.com/@ifg.instituto?_t=ZM-8zZDvTJhadC&_r=1" target="_blank"><i class="fab fa-tiktok"></i></a>
+    <a href="https://www.linkedin.com/in/instituto-de-formação-global-ifg-454703369" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+    <a href="https://youtube.com/@institutodeformacaoglobal?si=pxMNDphDUPbhQiJk" target="_blank"><i class="fab fa-youtube"></i></a>
+  </div>
+</footer>
+
+<!-- Modal Confirmação -->
+<div class="modal fade" id="modalDoacao" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Doação Copiada</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        Informações da doação copiadas! Obrigado por apoiar o Projeto IFG.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Toast -->
+<div id="toast" style="position:fixed;bottom:20px;left:50%;transform:translateX(-50%);
+background:#3533cd;color:#fff;padding:12px 20px;border-radius:8px;display:none;z-index:10000;font-weight:600;"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="./doacoes.js"></script>
-
+<script src="./humburguer.js"></script>
+<script src="./index.js"></script>
 </body>
 </html>

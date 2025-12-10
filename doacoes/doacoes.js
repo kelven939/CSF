@@ -1,70 +1,38 @@
-function copyText(text) {
-  navigator.clipboard.writeText(text).then(() => {
-    showToast(`Copiado com sucesso: ${text}`, 'success');
-  }).catch(() => {
-    showToast('Erro ao copiar. Tente novamente.', 'error');
-  });
-}
+// QR Codes
+new QRCode(document.getElementById("qrMpesa"),{text:"848510103",width:130,height:130});
+new QRCode(document.getElementById("qrEmola"),{text:"878530103",width:130,height:130});
+new QRCode(document.getElementById("qrPix"),{text:"equipe.institutoifg@gmail.com",width:130,height:130});
+new QRCode(document.getElementById("qrWestern"),{text:"+5516993307422",width:130,height:130});
 
-function showToast(message, type) {
-  const toast = document.getElementById('toast');
-  toast.textContent = message;
-  toast.className = `toast show ${type}`;
-  setTimeout(() => {
-    toast.className = 'toast';
-  }, 3000);
-}
-
-function generateQR(innerId, text) {
-  const container = document.getElementById(innerId);
-  container.innerHTML = '';
-  new QRCode(container, {
-    text: text,
-    width: 140,
-    height: 140,
-    colorDark : "#004080",
-    colorLight : "#ffffff",
-    correctLevel : QRCode.CorrectLevel.H
-  });
-}
-
-generateQR('mpesaInner', '848510103');
-generateQR('emolaInner', '878530103');
-// generateQR('bankInner', '000123456789');
-generateQR('pixInner', 'equipe.institutoifg@gmail.com');
-generateQR('paypalInner', 'https://paypal.me/institutoglobal');
-generateQR('westernInner', '+5516993307422');
-
-const tabButtons = document.querySelectorAll('.tab-btn');
-const tabContents = document.querySelectorAll('.tab-content');
-
-tabButtons.forEach(btn => {
-  btn.addEventListener('click', () => {
-    tabButtons.forEach(b => b.classList.remove('active'));
-    tabContents.forEach(c => c.classList.remove('active'));
-    btn.classList.add('active');
-    document.getElementById(btn.dataset.tab).classList.add('active');
+document.querySelectorAll('.btn-copy').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const text = btn.getAttribute('data-text');
+    navigator.clipboard.writeText(text);
+    var modal = new bootstrap.Modal(document.getElementById('modalDoacao'));
+    modal.show();
   });
 });
 
-// Modal
-const modal = document.getElementById("solidarityModal");
-const openModalBtn = document.getElementById("openModal");
-const closeModal = modal.querySelector(".close");
+// Voluntário
+function enviarVoluntario(e){e.preventDefault();showToast("Candidatura enviada com sucesso!");e.target.reset();}
 
-// Abrir modal
-openModalBtn.addEventListener("click", () => {
-  modal.style.display = "block";
-});
+// Fade-in Cards
+const cards = document.querySelectorAll('.card, .fade-in, .hero .content');
+const observer = new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){ entry.target.classList.add('show'); }
+  });
+},{threshold:0.2});
+cards.forEach(c=>observer.observe(c));
 
-// Fechar modal ao clicar no X
-closeModal.addEventListener("click", () => {
-  modal.style.display = "none";
-});
+function abrirLightbox(imagem, titulo, texto) {
+  document.getElementById("lightbox-img").src = imagem;
+  document.getElementById("lightbox-titulo").innerText = titulo;
+  document.getElementById("lightbox-texto").innerText = texto;
 
-// Fechar modal ao clicar fora da caixa
-window.addEventListener("click", (e) => {
-  if (e.target == modal) {
-    modal.style.display = "none";
-  }
-});
+  document.getElementById("lightbox").classList.add("active");
+}
+
+function fecharLightbox() {
+  document.getElementById("lightbox").classList.remove("active");
+}
