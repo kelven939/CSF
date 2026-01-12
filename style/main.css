@@ -1917,7 +1917,7 @@ footer p {
 
 .section-title {
   text-align: center;
-  font-size: 1.8em;
+  font-size: 1.8em !important;
   margin-bottom: 20px;
   font-weight: 800;
 }
