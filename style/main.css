@@ -2010,7 +2010,7 @@ footer p {
   left: 50%;
   top: 0;
   width: 4px;
-  height: 70%;
+  height: 55%;
   background: linear-gradient(90deg, #000000, #3533cd);
   transform: translateX(-50%);
   border-radius: 10px;
