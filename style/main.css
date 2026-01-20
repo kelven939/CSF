@@ -606,7 +606,7 @@ p {
 
 /* Nossa Missao */
 .secNossaMission {
-  margin-top: 30px;
+  margin-top: -40px;
   padding: 20px;
   background: white;
 }
@@ -649,7 +649,7 @@ p {
 
 /* Politicas de Bolsa */
 .SecPoliticas {
-  margin-top: 35px;
+  margin-top: 15px;
 }
 .containerPolitica {
   display: flex;
@@ -842,7 +842,7 @@ p {
 .secFaq {
   background: linear-gradient(135deg, #1e1e2f, #2d2bb3, #1e1e2f);
   padding: 55px;
-  margin-top: 95px;
+  margin-top: 30px;
   padding-bottom: 75px;
 }
 .faq {
@@ -1330,7 +1330,7 @@ footer p {
 }
 
 .section-nossos-servicos {
-  margin-top: 45px;
+  margin-top: -40px;
   padding-bottom: 35px;
 }
 .services-titles {
@@ -1942,6 +1942,7 @@ footer p {
   padding: 80px 20px;
   border-radius: 20px;
   margin: 60px auto;
+  margin-top: -40px;
   background: linear-gradient(white, white) padding-box,
   linear-gradient(135deg, #000000, #3f3ded, #000000) border-box;
 }
@@ -2124,7 +2125,7 @@ footer p {
 }
 
 .secMentores {
-  margin-top: 40px;
+  margin-top: -10px;
 }
 
 nav {
