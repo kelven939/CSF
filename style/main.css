@@ -606,7 +606,7 @@ p {
 
 /* Nossa Missao */
 .secNossaMission {
-  margin-top: -40px;
+  margin-top: -15px;
   padding: 20px;
   background: white;
 }
@@ -1212,6 +1212,7 @@ footer p {
 .quem-somos-novo {
   width: 100%;
   padding: 70px 20px;
+  margin-top: -45px;
   background: linear-gradient(90deg, #000000, #3533cd, #000000);
   color: #fff;
   font-family: "Segoe UI", sans-serif;
@@ -1330,7 +1331,7 @@ footer p {
 }
 
 .section-nossos-servicos {
-  margin-top: -40px;
+  margin-top: -15px;
   padding-bottom: 35px;
 }
 .services-titles {
@@ -1942,7 +1943,7 @@ footer p {
   padding: 80px 20px;
   border-radius: 20px;
   margin: 60px auto;
-  margin-top: -40px;
+  margin-top: -15px;
   background: linear-gradient(white, white) padding-box,
   linear-gradient(135deg, #000000, #3f3ded, #000000) border-box;
 }
