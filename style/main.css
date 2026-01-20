@@ -288,6 +288,13 @@ p {
 }
 
 @media (max-width: 768px) {
+  .contentBanner {
+    text-align: center !important;
+  }
+    .contentBanner p {
+    text-align: center !important;
+    font-size: 1.5rem !important;
+  }
   .banner {
     text-align: center;
     padding: 50px 20px;
@@ -296,12 +303,12 @@ p {
 
   .banner-title,
   .banner-highlight {
-    font-size: 1.4rem;
+    font-size: 12rem;
   }
 
   .banner-text,
   .banner-subtitle {
-    font-size: 0.95rem;
+    font-size: 12px;
   }
 
   .circuloRedesMain {
@@ -532,7 +539,7 @@ p {
 /* Quem Somos */
 .quemSomos {
   margin: auto;
-  margin-top: -45px;
+  margin-top: -95px;
   background: white;
   padding: 20px;
   border: 0px solid black;
@@ -1071,6 +1078,25 @@ footer p {
 }
 
 @media (max-width: 768px) {
+  .redesFooter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.redesFooter a {
+  margin: 0px -3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+  footer p {
+    font-size: 1.5rem !important;
+    width: 90%;
+  }
   .redesFooter a i {
     color: #eee;
     font-size: 2rem;
@@ -1918,7 +1944,6 @@ footer p {
   margin: 60px auto;
   background: linear-gradient(white, white) padding-box,
   linear-gradient(135deg, #000000, #3f3ded, #000000) border-box;
-  border: 0px solid transparent;
 }
 
 .section-title {
@@ -1984,9 +2009,8 @@ footer p {
   background: linear-gradient(90deg, #000000, #3533cd);
 }
 .timeline-section {
-  padding: 80px 20px;
+  padding: 10px 20px;
   max-width: 1100px;
-  margin: auto;
   position: relative;
 }
 
