@@ -1,3 +1,20 @@
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("form-lista-espera");
+
+  form.querySelectorAll("input, button").forEach(el => {
+    el.disabled = true;
+  });
+});
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("form-lista-espera");
+
+  form.querySelectorAll("input").forEach(el => el.disabled = true);
+
+  const btn = form.querySelector("button");
+  btn.disabled = true;
+  btn.innerText = "Agendamento fechado";
+});
+
 document.querySelectorAll('.faq-question').forEach(item => {
 	item.addEventListener('click', () => {
 		const parent = item.parentElement;
